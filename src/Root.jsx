@@ -7,7 +7,7 @@ const RootPage = () => {
     <div className='p-4 relative'>
         <Header/>
          
-         {/* <AvailableStock/> */}
+         <AvailableStock/>
     </div>
   )
 }
