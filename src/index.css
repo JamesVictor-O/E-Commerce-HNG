@@ -4,6 +4,9 @@
 .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+.yes-scrollbar::-webkit-scrollbar {
+    display: inline;
+  }
   .no-scrollbar {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */

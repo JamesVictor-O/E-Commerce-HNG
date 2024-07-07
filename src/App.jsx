@@ -1,14 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './index.css'
 import RootPage from './Root'
+import CartItem from './components/cartItems/CartItem'
+import { RouterProvider,createBrowserRouter,Route,createRoutesFromElements } from 'react-router-dom'
 function App() {
-   
-
+      const router=createBrowserRouter(
+          createRoutesFromElements(
+            <Route>
+              <Route path='/' element={<RootPage/>}/>
+               <Route path='cartItem' element={<CartItem/>}/>
+             </Route>
+          )
+      )
   return (
-    <div className='bg-white  md:bg-[#FAFFFF]'>
-       <RootPage/>
+    <div className='bg-[#FAFFFF] w-max-[1318.7px] '>
+       <RouterProvider router={router}/>
     </div>
   )
 }
