@@ -7,8 +7,10 @@ const RootPage = () => {
   return (
     <div className='p-4 relative no-scrollbar'>
          <Header/>
-         <AvailableStock/>
-         <Outlet/>
+         <div>
+           <Outlet/>
+         </div>
+        
     </div>
   )
 }

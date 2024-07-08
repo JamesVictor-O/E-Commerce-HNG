@@ -49,7 +49,7 @@ const CartItem = () => {
                </div>
 
                {/* item details */}
-                <div className=" w-[327px] h-[382.29px] md:w-[645.71px]  ml-6 md:h-[447.42px] md:gap-[24px] mt-[30px]">
+                <div className=" w-[327px] h-[382.29px] md:w-[645.71px]  ml-6 md:h-[447.42px] md:gap-[24px] mt-[30px] md:mt-[0px]">
                     <div className="w-[445.71px] h-[353px] gap-[18px]">
                         <div className="h-[100px] w-[352px] md:h-[191px] gap-[16px]">
                            <h6 className="hidden md:block">Product</h6>

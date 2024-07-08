@@ -2,11 +2,19 @@ import React from 'react'
 import navBar from './../../../assets/nav.svg'
 import cartIcon from './../../../assets/CartIcon.svg'
 import user from './../../../assets/User_03.svg'
+import { useNavigate } from 'react-router-dom'
 const MenuBar = () => {
+  const navigate=useNavigate()
+  const handleCartNavigatin=()=>{
+    navigate("/")
+  }
+  const handleCheckOutNavigatin=()=>{
+    navigate("checkout")
+  }
   return (
     <div className='flex justify-between items-center px-[10px] h-[30px] pt-[4px] mt-2 md:px-[60px]  md:py-[20px] w-full md:h-[85px]'>
        <div className='hidden md:flex  flex-row justify-between w-[127px] h-[24px] text-[18px] font-normal'>
-         <span className=''>Home</span>
+        <button onClick={handleCartNavigatin}>Home</button>
          <span>Shop</span>
        </div>
 
@@ -19,7 +27,7 @@ const MenuBar = () => {
           <div >
             <img src={user} alt='user Icon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
-          <div>
+          <div onClick={handleCheckOutNavigatin}>
             <img src={cartIcon} alt='cartIcon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
        </div>
