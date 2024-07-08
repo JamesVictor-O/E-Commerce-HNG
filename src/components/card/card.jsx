@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom'
 useNavigate
 
 const Card = ({bag}) => {
-    const {bagName,bagPrice,bagImage}=bag
+    const {bagName,bagPrice,bagImage, bagId}=bag
 
     const navigate=useNavigate()
     const handleNavigation=()=>{
-       navigate("cartItem",{state:{bagName:bagName, bagImage,bagPrice}})
+       navigate("cartItem",{state:{bagName, bagImage,bagPrice,bagId}})
     }
   return (
     <div className='w-[150px] h-[236px] flex flex-col justify-between md:w-[290px] md:h-[426px]' onClick={handleNavigation}>

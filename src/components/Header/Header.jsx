@@ -1,11 +1,13 @@
 import React from 'react'
 import MenuBar from './MenuBar/MenuBar'
 import SearchSection from './SearchSection/SearchSection'
+import { useLocation } from 'react-router-dom'
 const Header = () => {
+  const location=useLocation()
   return (
     <div className='skicky top-0 z-10 flex flex-col items-center'>
         <MenuBar/>
-        <SearchSection/>
+        {location.pathname === "/" && <SearchSection/> }
     </div>
   )
 }

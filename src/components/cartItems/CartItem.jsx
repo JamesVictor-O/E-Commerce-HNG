@@ -2,9 +2,11 @@ import card from "../../assets/card1.jpg"
 import group from "../../assets/Group.svg"
 import Star from "../../assets/Star.svg"
 import { useLocation } from "react-router-dom"
+import { useContext } from "react"
+import { myStates } from "../contextAPI/MyStateProvider"
 const CartItem = () => {
     const location=useLocation()
-    const {bagName,bagPrice,bagImage} =location.state
+    const {bagName,bagPrice,bagImage,bagId} =location.state
     const countries = [
         "United States",
         "Canada",
@@ -18,6 +20,25 @@ const CartItem = () => {
         "Brazil",
         // Add more countries as needed
       ];
+
+     const {setCartItems,cartItems} =useContext(myStates)
+
+      const handleAddItemToCart=()=>{
+       
+        setCartItems([
+            ...cartItems,
+            {
+                bagName,
+                bagImage,
+                bagPrice,
+                bagId
+            }
+        ])
+
+        console.log(cartItems)
+
+
+      }
   return (
     <div className="relative w-[347px] md:w-[1,313.71px] md:h-[4359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
         <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
@@ -109,12 +130,12 @@ const CartItem = () => {
                             
                             <button className=" w-[310px] h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] py-[10px] md:py-[19.66px] px-[19.4px] text-black font-semibold">Buy Now</button>
                         
-                            <div>
+                            <div onClick={handleAddItemToCart}>
                                 <button className="w-[310px] justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold mt-[10px]">Add to chart</button>
                             </div>
                          </div>
                          <div className="">
-                            <select className=" w-[310px] h-[44px] md:w-[645.71px] md:h-[47.05px] rounded-[7.9px] items-center pl-[23.7px] bg-[#EDE7E7]">
+                            <select className=" w-[310px] h-[44px] md:w-[500.71px] md:h-[47.05px] rounded-[7.9px] items-center pl-[23.7px] bg-[#EDE7E7]">
                             <option className="text-[#005A59] " value="">select your Location</option>
                             {countries.map((country, index) => (
                             <option key={index} value={country}>

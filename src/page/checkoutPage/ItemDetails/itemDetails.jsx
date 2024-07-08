@@ -1,11 +1,11 @@
 import star from "../../../assets/Star.svg"
 
-const ItemDetails = () => {
+const ItemDetails = ({item}) => {
   return (
     <div className='w-[113px] h-[59.96px] flex flex-col justify-between items-start md:w-[184px] md:h-[140px]'>
         <div className="md:w-[184px] md:h-[100px] h-[80.21px] ml-5 flex justify-around flex-col">
             <div className='w-[113px] h-[37.02px] flex flex-col justify-between'>
-                <h2 className='h-[19px] font-semibold text-[16.03px] leading-[19.3px] '>Cream totebag</h2>
+                <h2 className='h-[19px] font-semibold text-[16.03px] leading-[19.3px] '>{item.bagName}</h2>
                 <div>
                 <span>1 item</span>
                 <span>* Zip</span>
