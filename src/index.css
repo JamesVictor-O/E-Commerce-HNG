@@ -11,4 +11,14 @@
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
   }
+  .custom-background {
+    background-image: url('./assets/baground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .bg-custom-overlay {
+    background-color: #030307;
+    /* background-color: red; */
+  }
   

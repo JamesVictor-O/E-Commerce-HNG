@@ -4,6 +4,7 @@ import add from "../../assets/add.svg"
 import location from "../../assets/location.svg"
 import editor from "../../assets/editor.svg"
 import creditCard from "../../assets/CreditCard01.svg"
+import  warning from "../../assets/warning.svg"
 const CheckoutPage = () => {
   return (
     <div className=''> 
@@ -34,7 +35,7 @@ const CheckoutPage = () => {
         {/* ends */}
                
         {/* start */}
-            <div className='mt-24'>
+            <div className=''>
                 <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
                     <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                         <img src={location} alt="location" />
@@ -54,7 +55,8 @@ const CheckoutPage = () => {
                     </button>
                 </div>
 
-                <div className='w-[327.21px] h-[149px] mt-[35px]  border-t-[2px] border-r-0 border-l-0 border-b-0'>
+                <div className='w-[327.21px] h-[149px] mt-[28px]  border-t-[2px] border-r-0 border-l-0 border-b-0 md:border-t-0'>
+                    <h2 className='w-[180px] h-[29px] font-bold text-[24px] leading-[28.8px] mb-4'>Order Summary</h2>
                     <div className='w-[325.21px] h-[115px] px-0 py-[6px]'>
                         <div className='w-[325.21px] flex flex-row justify-between items-center mb-4'>
                             <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>SubTotal</span>
@@ -69,20 +71,27 @@ const CheckoutPage = () => {
                             <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦4,000</span>
                         </div>
                     </div>
-                    <div className='w-[325.21px] flex flex-row justify-between items-center mb-2 border-t-2 border-b-2 pt-[5px] pb-[5px]'>
+                    <div className='w-[325.21px] flex flex-row justify-between items-center mb-2 border-t-4 border-b-4 pt-[5px] pb-[5px]'>
                         <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>Total</span>
                         <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦4,000</span>
                     </div>
+
+                    <div className='hidden md:flex w-[327px] h-[57.89px] rounded-[8px] border-[0.49px] pl-[4px]'>
+                         <div className='w-[20.68px] h-[29.6px] pt-[2.96px] pl-[0px] pb-[2.96px]'>
+                            <img src={warning} alt="" />
+                         </div>
+                         <p className='w-[308px] h-[50px] font-normal leading-[25.26px] text-[15.79px] '>Please your totebag will be delivered in three to five working days</p>
+                    </div>
                 </div>
 
-                <div  className='md:hidden w-[327px] h-[32px] rounded-[2px] border-[0.5px] pt-[8px] pr-[197px] pb-[8px] pl-[8px] mt-4 flex flex-row'>
+                <div  className='md:hidden w-[317px] h-[32px] rounded-[2px] border-[0.5px] pt-[8px] pr-[197px] pb-[8px] pl-[8px] mt-14 flex flex-row'>
                     <span className='text-[12px] font-normal leading-[12px] align-middle'>Payment Options</span>
                     <div className='w-[16px] h-[16px]'>
                         <img src={creditCard} alt="" />
                     </div>
                 </div>
 
-                <button className='w-[328px] h-[56px] rounded-[24px] border-[0.74px] pt-[17px] pl-[85px] pb-[17px] pr-[85px] mt-[80px]'>
+                <button className='w-[328px] h-[56px] rounded-[24px] border-[0.74px] pt-[17px] pl-[85px] pb-[17px] pr-[85px] mt-[30px] md:mt-[120px]'>
                     Proceed to CheckOut
                 </button>
             </div>

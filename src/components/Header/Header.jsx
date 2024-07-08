@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className='skicky top-0 z-10 flex flex-col items-center'>
         <MenuBar/>
-        {/* <SearchSection/> */}
+        <SearchSection/>
     </div>
   )
 }

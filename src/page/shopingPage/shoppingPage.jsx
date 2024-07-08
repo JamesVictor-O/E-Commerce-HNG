@@ -5,7 +5,7 @@ import AvailableStock from '../../components/AvailableStock/AvailableStock'
 const ShoppingPage = () => {
   return (
     <div>
-       {/* <Advert/> */}
+       <Advert/>
        <AvailableStock/>
     </div>
   )
