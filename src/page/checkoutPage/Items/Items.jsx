@@ -7,7 +7,7 @@ import add from "../../../assets/add.svg"
 import card from "../../../assets/card1.jpg"
 const Items = () => {
   return (
-    <div className=' md:w-[863.88px] md:h-[180px] w-[327.41px] border border-gray-400 md:mr-4 h-[84.76px] pt-[8.04px] pl-[8.04] pb-[16px] flex flex-row items-center justify-between'>
+    <div className=' md:w-[863.88px] md:h-[180px] w-[327.41px] mb-6 border border-gray-400 md:mr-4 h-[84.76px] pt-[8.04px] pl-[8.04] pb-[16px] flex flex-row items-center justify-between'>
             {/* image */}
             <div className='w-[60.32px] h-[60.32px] flex flex-row md:w-[332.02px] md:h-[140px]'>
                 <img src={card} alt='item image' className='w-[60.32px] h-[60.32px] md:w-[128.02px] md:h-[140px]'/>
