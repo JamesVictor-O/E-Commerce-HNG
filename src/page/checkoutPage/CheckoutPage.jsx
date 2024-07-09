@@ -5,6 +5,7 @@ import location from "../../assets/location.svg"
 import editor from "../../assets/editor.svg"
 import creditCard from "../../assets/CreditCard01.svg"
 import  warning from "../../assets/warning.svg"
+import PaymentGateWay from '../paymentPage/PaymentGateWay'
 import { useContext } from 'react'
 import { myStates } from '../../components/contextAPI/MyStateProvider'
 const CheckoutPage = () => {
@@ -20,6 +21,7 @@ const CheckoutPage = () => {
                <h2>Your cart is empty</h2>
             </div>
         ):(
+          <>
             <div className='relative md:w-[1317.61px] w-[397px] h-[798px] mt-[40px]  md:h-[998px]'>
                     <h2 className='md:hidden w-[73px] h-[19px] md:mt-[22px] ml-[18px] text-[16px] font-semibold leading-[19.2px]' >Checkout</h2>
 
@@ -105,7 +107,8 @@ const CheckoutPage = () => {
                    </div>
 
             </div>
-
+            <PaymentGateWay/>
+          </>
         )}
     </div>
   )
