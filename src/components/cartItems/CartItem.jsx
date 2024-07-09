@@ -40,15 +40,15 @@ const CartItem = () => {
 
       }
   return (
-    <div className="relative w-[375px] md:w-[1,313.71px]  md:h-[1359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
+    <div className="relative w-[475px] md:w-[1,313.71px]  md:h-[1359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
         <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
             <span className="font-semibold text-[40px] leading-[48px] text-[#001616] font-Raleway">Your Cart</span>
             <span className="md:font-Monserrat md:text-[18px] md:leading-[21.6px]">Review and manage the items in your shopping cart</span>
         </div>
-        <div className="w-[377px] flex h-[410] md:w-[1313.71px] md:h-[842.95px] md:gap-[48px] mt-3 md:ml-4">
+        <div className="w-[477px] flex h-[410] md:w-[1313.71px] md:h-[842.95px]  md:gap-[48px] mt-3 md:ml-4">
            <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex flex-row w-[377px] ">
                 {/* cart item */}
-               <div className="w-[377px] h-[612.46px]  md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col items-center ">
+               <div className="w-[477px] h-[612.46px] md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col items-center ">
                     <div className="w-[344px] h-[360px] border-[0.5px] mr-3">
                        <img src={bagImage} alt="item image" className=""/>
                     </div>
@@ -70,7 +70,7 @@ const CartItem = () => {
                </div>
 
                {/* item details */}
-                <div className=" w-[327px] h-[402.29px] md:w-[645.71px] md:h-[647.42px] md:gap-[24px] mt-[30px] md:mt-[0px] md:ml-6">
+                <div className=" w-[437px] pl-6 h-[402.29px] md:w-[645.71px] md:h-[647.42px] md:gap-[24px] mt-[30px] md:mt-[0px] ml-6">
                     <div className="w-[445.71px] h-[353px] gap-[18px]">
                         <div className="h-[100px] w-[352px] md:h-[191px] gap-[16px]">
                            <h6 className="hidden md:block">Product</h6>

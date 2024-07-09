@@ -10,7 +10,7 @@ const RootPage = () => {
          <div className='p-4'>
            <Header/>
          </div>
-         <div className='p-4'>
+         <div className='p'>
            <Outlet/>
          </div>
           <div>
