@@ -40,7 +40,7 @@ const CartItem = () => {
 
       }
   return (
-    <div className="relative w-[347px] md:w-[1,313.71px] md:h-[4359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
+    <div className="relative w-[347px] md:w-[1,313.71px] bg-red-400 md:h-[1359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
         <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
             <span className="font-semibold text-[40px] leading-[48px] text-[#001616] font-Raleway">Your Cart</span>
             <span className="md:font-Monserrat md:text-[18px] md:leading-[21.6px]">Review and manage the items in your shopping cart</span>

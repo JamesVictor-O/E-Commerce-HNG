@@ -6,9 +6,11 @@ import Footer from './components/Footer/Footer'
 import { Outlet } from 'react-router-dom'
 const RootPage = () => {
   return (
-    <div className='p-4 relative no-scrollbar'>
-         <Header/>
-         <div>
+    <div className='relative no-scrollbar'>
+         <div className='p-4'>
+           <Header/>
+         </div>
+         <div className='p-4'>
            <Outlet/>
          </div>
           <div>
