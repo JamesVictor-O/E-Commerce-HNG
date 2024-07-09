@@ -40,28 +40,28 @@ const CartItem = () => {
 
       }
   return (
-    <div className="relative w-[347px] md:w-[1,313.71px] bg-red-400 md:h-[1359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
+    <div className="relative w-[347px] md:w-[1,313.71px]  md:h-[1359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
         <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
             <span className="font-semibold text-[40px] leading-[48px] text-[#001616] font-Raleway">Your Cart</span>
             <span className="md:font-Monserrat md:text-[18px] md:leading-[21.6px]">Review and manage the items in your shopping cart</span>
         </div>
-        <div className="w-[377px] flex h-[410] md:w-[1213.71px] md:h-[4,257.95px] md:gap-[48px] mt-3">
-           <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex justify-around flex-row">
+        <div className="w-[377px] flex h-[410] md:w-[1313.71px] md:h-[842.95px] md:gap-[48px] mt-3 md:ml-4">
+           <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex flex-row w-[377px] ">
                 {/* cart item */}
-               <div className="w-[377px] h-[562.46px]  md:w-[444px] md:h-[842.46px] md:gap-[2px] flex flex-col items-center">
-                    <div>
-                       <img src={bagImage} alt="item image"/>
+               <div className="w-[377px] h-[612.46px]  md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col items-center ">
+                    <div className="w-[344px] h-[360px] border-[0.5px] mr-3">
+                       <img src={bagImage} alt="item image" className=""/>
                     </div>
-                    <div className="w-[296px] h-[88px] md:w-[437px] md:h-[250.46px]  gap-[16px] flex flex-row items-center justify-center mt-[20px]">
-                        <div className="w-[88px] h-[88px] md:w-[125.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
+                    <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[80px]">
+                        <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
                           <img src={card} alt="item image"/>
                           <span>Black</span>
                         </div>
-                        <div className="w-[88px] h-[88px] md:w-[125.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
+                        <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
                           <img src={card} alt="item image"/>
                           <span>Black</span>
                         </div>
-                        <div className="w-[88px] h-[88px] md:w-[125.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
+                        <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
                           <img src={card} alt="item image"/>
                           <span>Black</span>
                         </div>
@@ -70,7 +70,7 @@ const CartItem = () => {
                </div>
 
                {/* item details */}
-                <div className=" w-[327px] h-[382.29px] md:w-[645.71px]  ml-6 md:h-[447.42px] md:gap-[24px] mt-[30px] md:mt-[0px]">
+                <div className=" w-[327px] h-[402.29px] md:w-[645.71px] md:h-[647.42px] md:gap-[24px] mt-[30px] md:mt-[0px] md:ml-6">
                     <div className="w-[445.71px] h-[353px] gap-[18px]">
                         <div className="h-[100px] w-[352px] md:h-[191px] gap-[16px]">
                            <h6 className="hidden md:block">Product</h6>
@@ -85,19 +85,19 @@ const CartItem = () => {
                              {/* ratings */}
                             <div className="w-[88px] h-[16px] md:w-[275px] md:h-[43px] flex flex-row items-center">
                                 <div className="md:w-[215px] md:h-[40px] gap-[3.75px] flex flex-row items-center ">
-                                    <div className="bg-black w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black w-[30px] h-[30px] md:w-[40px] md:h-[40px] rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
                                 
@@ -118,6 +118,38 @@ const CartItem = () => {
                                       <span className="w-[126px] h-[45px] rounded-[4px] border-[0.5px] py-[8px] px-[12px]">{bagPrice}</span>
                                   </div>
                              </div>
+                                
+                             <div className="md:hidden w-[317px] h-[70px] flex flex-col justify-between">
+                                 <div className="w-[145px] h-[24px] flex flex-row justify-between">
+                                    <span className="w-[25px] bg-black text-white h-[25px] rounded-[6px] border-[0.25px] text-[10px] border-[#B9BFBF] pt-[5.5px] pl-[4px] pb-[5.5px] pr-[5px] text-center">XL</span>
+                                    <span className="w-[25px] h-[25px] rounded-[6px] border-[0.25px] text-[10px] border-[#B9BFBF] pt-[5.5px] pl-[4px] pb-[5.5px] pr-[5px] text-center">XXL</span>
+                                    <span className="w-[25px] h-[25px] rounded-[6px] border-[0.25px] text-[10px] border-[#B9BFBF] pt-[5.5px] pl-[4px] pb-[5.5px] pr-[5px] text-center">L</span>
+                                    <span className="w-[25px] h-[25px] rounded-[6px] border-[0.25px] text-[10px] border-[#B9BFBF] pt-[5.5px] pl-[4px] pb-[5.5px] pr-[5px] text-center">S</span>
+                                    <span className="w-[25px] h-[25px] rounded-[6px] border-[0.25px] text-[10px] border-[#B9BFBF] pt-[5.5px] pl-[4px] pb-[5.5px] pr-[5px] text-center">M</span>
+                                 </div>
+                                 <div className="w-[317px] h-[33px] flex flex-row rounded-[0.5px] p-[8px] bg-[#E0E7E7] justify-evenly">
+                                    <div className="w-[41px] h-[17px] flex flex-row items-center justify-between">
+                                        <input type="checkbox" />
+                                        <label className="font-normal text-[14px] leading-[16.8px] w-[21px] h-[17px]">Zip</label>
+                                    </div>
+                                    <div className="w-[41px] h-[17px] flex flex-row items-center justify-between">
+                                        <input type="checkbox" />
+                                        <label className="font-normal text-[14px] leading-[16.8px] w-[21px] h-[17px]"> Button</label>
+                                    </div>
+                                    <div className="w-[41px] h-[17px] flex flex-row items-center justify-between">
+                                        <input type="checkbox" />
+                                        <label className="font-normal text-[14px] leading-[16.8px] w-[21px] h-[17px]">None</label>
+                                    </div>
+                                 </div>
+                             </div>
+
+
+                             <div className="md:hidden w-[317.72px] h-[40px] bg-white rounded-[4px] border-[1px] px-[8px] py-[12px] mt-2 flex flex-row items-center justify-evenly">
+                               <img src={group} alt="image"/>
+                               <span className="font-medium text-[17px] leading-[28.8px] font-Montserrat">Delivery is not fee</span>
+                               <span className="w-[63.72px] h-[27.91px] rounded-[4.95px] border-[0.25px] px-[4.95px] py-[1.86px] bg-[#001414] text-center text-white border-[#948F8C]">$2</span>
+                            </div>
+
 
                              <div className="w-[645.71px] h-[51px] hidden md:block">
                                 <p>
@@ -126,12 +158,12 @@ const CartItem = () => {
                              </div>
                          </div>
 
-                         <div className="w-[310px] h-[112px] md:w-[490.32px] md:h-[159.37px] gap-[16px] mt-[50px]"> 
+                         <div className="w-[310px] h-[53px] md:w-[490.32px] md:h-[159.37px] gap-[16px] mt-[140px] md:mt-[50px] "> 
                             
-                            <button className=" w-[310px] h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] py-[10px] md:py-[19.66px] px-[19.4px] text-black font-semibold">Buy Now</button>
+                            <button className="hidden md:block w-[310px] h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] py-[10px] md:py-[19.66px] px-[19.4px] text-black font-semibold">Buy Now</button>
                         
                             <div onClick={handleAddItemToCart}>
-                                <button className="w-[310px] justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold mt-[10px]">Add to chart</button>
+                                <button className="w-[310px] justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold">Add to chart</button>
                             </div>
                          </div>
                          <div className="">
