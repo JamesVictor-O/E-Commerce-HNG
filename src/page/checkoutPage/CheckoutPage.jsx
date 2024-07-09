@@ -7,7 +7,6 @@ import creditCard from "../../assets/CreditCard01.svg"
 import  warning from "../../assets/warning.svg"
 import { useContext } from 'react'
 import { myStates } from '../../components/contextAPI/MyStateProvider'
-import PaymentGateWay from '../paymentPage/PaymentGateWay'
 const CheckoutPage = () => {
     const {cartItems,setPopUp,popUp}=useContext(myStates)
     const handlePopUp=()=>{
@@ -15,16 +14,16 @@ const CheckoutPage = () => {
         console.log(popUp)
      }
   return (
-    <> 
+    <div className=''> 
         {cartItems.length === 0 ? (
-            <div className="md:w-[1317.61px] md:h-full h-[300px] flex flex-col md:flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
+            <div className="md:w-[1317.61px] md:h-full h-[00px] flex flex-col md:flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
                <h2>Your cart is empty</h2>
             </div>
         ):(
-            <div className='md:w-[1317.61px] h-[988px] flex flex-col md:flex-row mt-[40px]'>
+            <div className='md:w-[1317.61px] h-[798px]  md:h-[998px] flex flex-col md:flex-row md:mt-[40px] justify-center items-center'>
                {/* start */}
-                   <div >
-                           <h2 className='md:hidden w-[73px] h-[19px] mt-[22px] ml-[18px] text-[16px] font-semibold leading-[19.2px]' >Checkout</h2>
+                   <div className='bg-blue-500' >
+                           <h2 className='md:hidden w-[73px] h-[19px] md:mt-[22px] ml-[18px] text-[16px] font-semibold leading-[19.2px]' >Checkout</h2>
                    
                            <div className='hidden md:flex w-[500px] h-[78px] flex-col'>
                                <h2 className='md:flex w-[500px] h-[48px] mt-[22px]  text-[40px] font-semibold leading-[48px]' >Shopping Cart</h2>
@@ -46,7 +45,7 @@ const CheckoutPage = () => {
                {/* ends */}
                       
                {/* start */}
-                   <div className=''>
+                   <div className='bg-red-500'>
                        <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
                            <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                                <img src={location} alt="location" />
@@ -110,8 +109,7 @@ const CheckoutPage = () => {
             </div>
 
         )}
-        <PaymentGateWay/>
-    </>
+    </div>
   )
 }
 
