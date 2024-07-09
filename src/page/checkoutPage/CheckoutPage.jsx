@@ -20,7 +20,7 @@ const CheckoutPage = () => {
                <h2>Your cart is empty</h2>
             </div>
         ):(
-            <div className='relative md:w-[1317.61px] w-[397px] h-[798px]  md:h-[998px] md:mt-[40px]'>
+            <div className='relative md:w-[1317.61px] w-[397px] h-[798px] mt-[40px]  md:h-[998px]'>
                     <h2 className='md:hidden w-[73px] h-[19px] md:mt-[22px] ml-[18px] text-[16px] font-semibold leading-[19.2px]' >Checkout</h2>
 
                     <div className='hidden md:flex w-[500px] h-[78px] flex-col'>
@@ -42,7 +42,7 @@ const CheckoutPage = () => {
                         </div>
 
 
-                        <div className=' absolute top-40 right-80'>
+                        <div className=' md:absolute md:top-40 md:right-5'>
                             {/* <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
                                 <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                                     <img src={location} alt="location" />
