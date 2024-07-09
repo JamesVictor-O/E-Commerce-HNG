@@ -1,75 +1,32 @@
-import card from "../../assets/card1.jpg"
-import group from "../../assets/Group.svg"
-import Star from "../../assets/Star.svg"
-import { useLocation } from "react-router-dom"
-import { useContext } from "react"
-import { myStates } from "../contextAPI/MyStateProvider"
-
-const CartItem = () => {
-    const location=useLocation()
-    const {bagName,bagPrice,bagImage,bagId} =location.state
-    const countries = [
-        "United States",
-        "Canada",
-        "United Kingdom",
-        "Australia",
-        "Germany",
-        "France",
-        "Japan",
-        "China",
-        "India",
-        "Brazil",
-        // Add more countries as needed
-      ];
-
-     const {setCartItems,cartItems} =useContext(myStates)
-
-    
-
-      const handleAddItemToCart=()=>{
-       
-        setCartItems([
-            ...cartItems,
-            {
-                bagName,
-                bagImage,
-                bagPrice,
-                bagId
-            }
-        ])
-      }
-  return (
-    <div className="w-[397px] md:w-[1440px] md:h-[780px]  md:pl-6">
-        <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
-            <span className="font-semibold text-[40px] leading-[48px] text-[#001616] font-Raleway">Your Cart</span>
-            <span className="md:font-Monserrat md:text-[18px] md:leading-[21.6px]">Review and manage the items in your shopping cart</span>
-        </div>
-        <div className="w-[397px] flex h-[410] md:w-[1410px] md:h-[842.95px]  mt-3">
-             <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex flex-row w-[377px] ">
-                <div className="w-[387px] h-[612.46px] md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col items-center ">
-                        <div className="w-[344px] h-[360px] border-[0.5px]">
-                           <img src={bagImage} alt="item image" className=""/>
+ <div className="relative w-[475px] md:w-[1,313.71px]  md:h-[1359.5] md:top-[2px] md:left-[10px] md:gap-[24px]">
+      
+        <div className="w-[477px] flex h-[410] md:w-[1313.71px] md:h-[842.95px]  md:gap-[48px] mt-3 md:ml-4">
+           <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex flex-row w-[377px] ">
+                {/* cart item */}
+               <div className="w-[477px] h-[612.46px] md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col items-center ">
+                    <div className="w-[344px] h-[360px] border-[0.5px] mr-3">
+                       <img src={bagImage} alt="item image" className=""/>
+                    </div>
+                    <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[80px]">
+                        <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
+                          <img src={card} alt="item image"/>
+                          <span>Black</span>
                         </div>
-                        <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[80px]">
-                            <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                            <img src={card} alt="item image"/>
-                            <span>Black</span>
-                            </div>
-                            <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                            <img src={card} alt="item image"/>
-                            <span>Black</span>
-                            </div>
-                            <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                            <img src={card} alt="item image"/>
-                            <span>Black</span>
-                            </div>
-                            
+                        <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
+                          <img src={card} alt="item image"/>
+                          <span>Black</span>
                         </div>
-                </div>
+                        <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
+                          <img src={card} alt="item image"/>
+                          <span>Black</span>
+                        </div>
+                        
+                    </div>
+               </div>
 
-                {/* items */}
-                <div className="w-[397px] h-[402.29px] md:w-[645.71px] md:h-[647.42px] md:gap-[24px] mt-[30px] md:mt-[0px]">
-                    <div className="w-[397px] h-[353px] gap-[18px] pl-6">
+               {/* item details */}
+                <div className=" w-[437px] pl-6 h-[402.29px] md:w-[645.71px] md:h-[647.42px] md:gap-[24px] mt-[30px] md:mt-[0px] ml-6">
+                    <div className="w-[445.71px] h-[353px] gap-[18px]">
                         <div className="h-[100px] w-[352px] md:h-[191px] gap-[16px]">
                            <h6 className="hidden md:block">Product</h6>
                             <div className="hidden w-[285.72px] h-[48px] bg-[#BAC0C0] rounded-[4px] border-[1px] px-[8px] py-[12px] md:flex flex-row items-center justify-evenly">
@@ -108,8 +65,8 @@ const CartItem = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <div className=" w-[219.35px] h-[54.29px] md:w-[645.71px] md:h-[114px] py-[12px] px-[0px] gap-[16px]">
+                         
+                         <div className=" w-[219.35px] h-[54.29px] md:w-[645.71px] md:h-[114px] py-[12px] px-[0px] gap-[16px]">
                              <div className="w-[219.35px] h-[54.29px] md:w-[645.7px] md:h-[53px] gap-[16px]">
                                   <div className="w-[185px] h-[45px] gap-[12px]">
                                       <span className="w-[42px] h-[27px] font-semibold text-[20px] leading-[27.2px]">Price :</span>
@@ -164,7 +121,6 @@ const CartItem = () => {
                                 <button className="w-[310px] justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold">Add to chart</button>
                             </div>
                          </div>
-
                          <div className="">
                             <select className=" w-[310px] h-[44px] md:w-[500.71px] md:h-[47.05px] rounded-[7.9px] items-center pl-[23.7px] bg-[#EDE7E7]">
                             <option className="text-[#005A59] " value="">select your Location</option>
@@ -177,10 +133,11 @@ const CartItem = () => {
                          </div>
                     </div>
                 </div>
-             </div>
+           </div>
+        
+            {/* discription */}
+            <div>
+
+            </div>
         </div>
     </div>
-  )
-}
-
-export default CartItem

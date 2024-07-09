@@ -7,10 +7,15 @@ import creditCard from "../../assets/CreditCard01.svg"
 import  warning from "../../assets/warning.svg"
 import { useContext } from 'react'
 import { myStates } from '../../components/contextAPI/MyStateProvider'
+import PaymentGateWay from '../paymentPage/PaymentGateWay'
 const CheckoutPage = () => {
-    const {cartItems}=useContext(myStates)
+    const {cartItems,setPopUp,popUp}=useContext(myStates)
+    const handlePopUp=()=>{
+        setPopUp(true)
+        console.log(popUp)
+     }
   return (
-    <div className=''> 
+    <> 
         {cartItems.length === 0 ? (
             <div className="md:w-[1317.61px] md:h-full h-[300px] flex flex-col md:flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
                <h2>Your cart is empty</h2>
@@ -97,7 +102,7 @@ const CheckoutPage = () => {
                            </div>
                        </div>
        
-                       <button className='w-[328px] h-[56px] rounded-[24px] border-[0.74px] pt-[17px] pl-[85px] pb-[17px] pr-[85px] mt-[30px] md:mt-[120px]'>
+                       <button onClick={handlePopUp} className='w-[328px] hover:bg-black hover:text-white h-[56px] rounded-[24px] border-[0.74px] pt-[17px] pl-[85px] pb-[17px] pr-[85px] mt-[30px] md:mt-[120px]'>
                            Proceed to CheckOut
                        </button>
                    </div>
@@ -105,7 +110,8 @@ const CheckoutPage = () => {
             </div>
 
         )}
-    </div>
+        <PaymentGateWay/>
+    </>
   )
 }
 

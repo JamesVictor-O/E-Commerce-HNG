@@ -4,12 +4,12 @@ import secondPic from "../../assets/secondAdvPic.jpg"
 import loder from "../../assets/Loader.svg"
 const Advert = () => {
   return (
-    <div className='w-[1190px] h-[554.55px] hidden md:block'>
+    <div className='w-[1400px] h-[554.55px] hidden md:block'>
        <div className='w-[541px] h-[68px] mb-[8px]'>
           <h2 className='text-[32px] font-normal '>Shop your favourite totebag</h2>
           <h6 className='text-[18px] font-normal'>Select the totebage that matches your fashion</h6>
        </div>
-       <div className='relative w-[1190px] h-[454.55px] rounded-[37.19px] border-[0.52px]  mt-7 custom-background bg-custom-overlay '>    
+       <div className='relative w-[1400px] h-[454.55px] rounded-[37.19px] border-[0.52px]  mt-7 custom-background bg-custom-overlay '>    
          <div className="absolute inset-0 bg-custom-overlay opacity-75">
              <div className="relative z-10">
                   <div className='w-[379px] h-[339.75px]  ml-[74.38px] mt-[42.36px] flex justify-between flex-col'>
