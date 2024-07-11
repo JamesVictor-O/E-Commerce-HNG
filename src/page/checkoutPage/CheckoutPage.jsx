@@ -17,12 +17,12 @@ const CheckoutPage = () => {
   return (
     <div className=''> 
         {cartItems.length === 0 ? (
-            <div className="md:w-[1317.61px] bg-red-300 mt-[20px] items-center md:h-full h-[100px] w-[397px] md:flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
+            <div className="md:w-[1317.61px]   mt-[20px] items-center h-full w-[328px] flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
                <h2>Your cart is empty</h2>
             </div>
         ):(
           <>
-            <div className='relative md:w-[1317.61px] w-[397px] h-[798px] mt-[40px]  md:h-[998px]'>
+            <div className='relative md:w-[1329px] w-[328px] h-[798px] mt-[40px]  md:h-[998px]'>
                     <h2 className='md:hidden w-[73px] h-[19px] md:mt-[22px] ml-[18px] text-[16px] font-semibold leading-[19.2px]' >Checkout</h2>
 
                     <div className='hidden md:flex w-[500px] h-[78px] flex-col'>
@@ -31,12 +31,12 @@ const CheckoutPage = () => {
                     </div>
 
                     
-                    <div className='w-[398px] h-[37px] mt-[30px] ml-[px] md:hidden items-center justify-center'>
-                        <span className='w-[156px] h-[37px] rounded-[20px] border-[1px] bg-black text-white py-[10px] px-[44px]'>Your order</span>
-                        <span className='w-[156px] h-[37px] rounded-[20px] border-[#ffdac7] text-[14px] border-[1px] text-black py-[10px] px-[24px]'>Delivery & Payment</span>
+                    <div className='w-[327px] h-[37px] mt-[30px] ml-[px] md:hidden items-center justify-center'>
+                        <span className='w-[150px] h-[37px] rounded-[20px] border-[1px] bg-black text-[12px] text-white py-[10px] px-[44px]'>Your order</span>
+                        <span className='w-[150px] h-[37px] rounded-[20px] border-[#ffdac7] text-[12px] border-[1px] text-black py-[10px] px-[24px]'>Delivery & Payment</span>
                    </div>
 
-                   <div className='flex flex-col md:flex-row md:mt-[40px] items-center '>
+                   <div className='flex flex-col md:flex-row md:mt-[40px] items-center'>
                         <div  className=' w-[347.45]  mt-[40px] md:w-[873.88px] md:h-[874px] '>
                                 {cartItems.map(item=>(
                                     <Items key={item.id} item={item}/>

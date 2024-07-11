@@ -80,6 +80,7 @@ const AvailableStock = () => {
       },
       
    ]
+   
   return (
     <div className="relative  w-[328px] ml-[10px] md:mt-10 gap-5  md:w-[1329px]">
         <div className="w-[226px] h-[34px] md:w-[552px] md:h-[82px]  ">
