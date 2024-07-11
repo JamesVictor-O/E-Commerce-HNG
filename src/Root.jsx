@@ -6,16 +6,12 @@ import Footer from './components/Footer/Footer'
 import { Outlet } from 'react-router-dom'
 const RootPage = () => {
   return (
-    <div className='relative no-scrollbar'>
-         <div className='p-4'>
+    <div className='relative w-[375px] sm:w-[640px] md:w-[1440px] flex flex-col justify-center items-center'>
            <Header/>
-         </div>
-         <div className='p'>
+         <div className=''>
            <Outlet/>
          </div>
-          <div>
-              <Footer/>
-          </div>
+          <Footer/>
     </div>
   )
 }

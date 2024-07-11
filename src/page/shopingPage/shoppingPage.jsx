@@ -4,7 +4,7 @@ import AvailableStock from '../../components/AvailableStock/AvailableStock'
 
 const ShoppingPage = () => {
   return (
-    <div>
+    <div className='flex flex-col justify-center items-center'>
        <Advert/>
        <AvailableStock/>
     </div>

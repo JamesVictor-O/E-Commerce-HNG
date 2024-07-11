@@ -15,7 +15,7 @@ const MenuBar = () => {
     navigate("/")
    }
   return (
-    <div className='flex justify-between items-center px-[10px] h-[30px] pt-[4px] mt-2 md:px-[60px]  md:py-[20px] w-full md:h-[85px]'>
+    <div className='flex justify-between items-center w-[326.55px]  h-[30px]  mt-2 md:pl-[60px] md:pr-[64px] md:pt-[20px] md:pb-[20px]  md:w-[1440px] md:h-[85px]'>
        <div className='hidden md:flex  flex-row justify-between w-[127px] h-[24px] text-[18px] font-normal'>
         <button onClick={handleCartNavigatin}>Home</button>
          <span>Shop</span>

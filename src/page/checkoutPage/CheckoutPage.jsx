@@ -17,7 +17,7 @@ const CheckoutPage = () => {
   return (
     <div className=''> 
         {cartItems.length === 0 ? (
-            <div className="md:w-[1317.61px] md:h-full h-[00px] flex flex-col md:flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
+            <div className="md:w-[1317.61px] bg-red-300 mt-[20px] items-center md:h-full h-[100px] w-[397px] md:flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
                <h2>Your cart is empty</h2>
             </div>
         ):(
