@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState,useContext } from 'react'
 import navBar from './../../../assets/nav.svg'
 import cartIcon from './../../../assets/CartIcon.svg'
 import user from './../../../assets/User_03.svg'
 import { useNavigate } from 'react-router-dom'
+import { myStates } from '../../contextAPI/MyStateProvider'
 const MenuBar = () => {
+  const {cartItems}=useContext(myStates);
+
   const navigate=useNavigate()
   const handleCartNavigatin=()=>{
     navigate("/")
@@ -30,7 +33,8 @@ const MenuBar = () => {
           <div>
             <img src={user} alt='user Icon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
-          <div onClick={handleCheckOutNavigatin}>
+          <div onClick={handleCheckOutNavigatin} className='relative'>
+            <span className='bg-red-500 absolute text-white p-1 rounded-[50%] bottom-[10px] left-4'>{cartItems.length}</span>
             <img src={cartIcon} alt='cartIcon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
        </div>

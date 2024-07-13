@@ -10,8 +10,8 @@ import { myStates } from '../../../components/contextAPI/MyStateProvider'
 import { CalculateTotal } from '../../../components/utilityFunctions/utility'
 const Items = ({product}) => {
 
-    const {cartItems,setCartItems}=useContext(myStates)
-    const { available_quantity,id,price,imageUrl,setProductTotal}=product
+    const {cartItems,setCartItems,setProductTotal}=useContext(myStates)
+    const { available_quantity,id,price,imageUrl}=product
 
     const handleItemAddition=()=>{
        const upDatedProduct=cartItems.map(product=>
@@ -32,12 +32,12 @@ const Items = ({product}) => {
             product.id !== id
         ))
          setCartItems(newProductList)
-         setProductTotal(CalculateTotal(upDatedProduct))
+         setProductTotal(CalculateTotal(newProductList))
     }
   return (
     <div className=' md:w-[863.88px] md:h-[180px] w-[327.41px] mb-6 border pr-4 md:pr-1 bg-white border-gray-200 rounded-[10px] md:mr-4 h-[84.76px] pt-[8.04px] pl-[8.04] pb-[16px] flex flex-row items-center justify-between'>
             {/* image */}
-            <div className='w-[60.32px] h-[60.32px] flex flex-row md:w-[332.02px] md:h-[140px] md:ml-3'>
+            <div className='w-[60.32px] h-[60.32px] ml-2 flex flex-row md:w-[332.02px] md:h-[140px] md:ml-3'>
                 <img src={imageUrl} 
                 alt='item image'
                 className='w-[60.32px] h-[60.32px] md:w-[128.02px] md:h-[140px]'

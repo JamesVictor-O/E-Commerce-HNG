@@ -84,7 +84,7 @@ const CheckoutPage = () => {
                                 </div>
                                 <div className='w-[325.21px] flex flex-row justify-between items-center mb-2 border-t-4 border-b-4 pt-[5px] pb-[5px]'>
                                     <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>Total</span>
-                                    <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>{productTotal + delivery}</span>
+                                    <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦{productTotal + delivery}</span>
                                 </div>
 
                                 <div className='hidden md:flex w-[327px] h-[57.89px] rounded-[8px] border-[0.49px] pl-[4px]'>

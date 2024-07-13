@@ -2,14 +2,23 @@ import card from "../../assets/card1.jpg"
 import group from "../../assets/Group.svg"
 import Star from "../../assets/Star.svg"
 import { useLocation } from "react-router-dom"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { myStates } from "../contextAPI/MyStateProvider"
+import { CalculateTotal,HandleAddItemToCart } from "../utilityFunctions/utility"
 
 const CartItem = () => {
     const location=useLocation()
-    const {name,price,imageUrl,available_quantity,id} =location.state
+    const {id} =location.state
 
-    console.log(name,price,imageUrl,available_quantity,id)
+    
+    const apiKey="9b64558aae124747b4097f3966414d6a20240712143239551922"
+   const url= `https://timbu-get-single-product.reavdev.workers.dev/${id}?organization_id=763700ddc9a04c94a7ee32f444ad7b90&Appid=WTFTGI54VWY5ESS&Apikey=${apiKey}`
+   const {setCartItems,cartItems,singleProduct,setSingleProduct} =useContext(myStates)
+
+    useEffect(() => {
+        fetch(url)
+        .then(reponse => reponse.json()).then(data => setSingleProduct(data))
+    }, [id])
     
     const countries = [
         "United States",
@@ -25,34 +34,11 @@ const CartItem = () => {
         // Add more countries as needed
       ];
 
-     const {setCartItems,cartItems} =useContext(myStates)
-
-      const handleAddItemToCart=()=>{
-        const product_Exist=cartItems.find(product=> product.id === id);
-
-        if(product_Exist){
-           const updatedCart= cartItems.map(cartItem =>
-                 cartItem.id === id? 
-                 {...cartItem,  available_quantity:cartItem.available_quantity + 1}
-                 : cartItem
-                )
-         setCartItems(updatedCart)
-        }else{
-            setCartItems([
-                ...cartItems,
-                {
-                    name,
-                    imageUrl,
-                    price,
-                    id,
-                    available_quantity
-                }
-            ])
-
-            alert("does not exis")
-
-        }
-      }
+    const productImage=singleProduct.photos?.[0]?.url;
+    
+    const {name,price,available_quantity,current_price}=singleProduct;
+    
+    const imageUrl=`https://api.timbu.cloud/images/${productImage}`
   return (
     <div className="w-[397px] md:w-[1317px]">
         <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
@@ -98,7 +84,7 @@ const CartItem = () => {
                              {/* ratings */}
                             <div className="w-[88px] h-[16px] md:w-[275px] md:h-[43px] flex flex-row items-center">
                                 <div className="md:w-[215px] md:h-[40px] gap-[3.75px] flex flex-row items-center ">
-                                    <div className="bg-black w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black w-[20px] h-[20px] md:w-[30px] md:h-[30px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
                                     <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
@@ -175,7 +161,7 @@ const CartItem = () => {
                             
                             <button className="hidden md:block w-[310px] h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] py-[10px] md:py-[19.66px] px-[19.4px] text-black font-semibold">Buy Now</button>
                         
-                            <div onClick={handleAddItemToCart}>
+                            <div onClick={(e => HandleAddItemToCart(cartItems,name,imageUrl,current_price,id,available_quantity,setCartItems))}>
                                 <button className="w-[310px] justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold">Add to chart</button>
                             </div>
                          </div>
