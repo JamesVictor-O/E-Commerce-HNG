@@ -6,7 +6,7 @@ import editor from "../../assets/editor.svg"
 import creditCard from "../../assets/CreditCard01.svg"
 import  warning from "../../assets/warning.svg"
 import PaymentGateWay from '../paymentPage/PaymentGateWay'
-import { useContext } from 'react'
+import { useContext,useEffect } from 'react'
 import { myStates } from '../../components/contextAPI/MyStateProvider'
 import { CalculateTotal } from '../../components/utilityFunctions/utility'
 const CheckoutPage = () => {
@@ -14,8 +14,9 @@ const CheckoutPage = () => {
     const handlePopUp=()=>{
         setPopUp(true)
      }
-    setProductTotal(CalculateTotal(cartItems))
-
+    useEffect(()=>{
+        setProductTotal(CalculateTotal(cartItems))
+    },[])
   return (
     <div className=''> 
         {cartItems.length === 0 ? (
@@ -47,7 +48,7 @@ const CheckoutPage = () => {
 
 
                         <div className=' md:absolute md:top-40 md:right-20'>
-                            <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
+                            <div className='md:hidden w-[327px] h-[180px] border-[4px] border-white '>
                                 <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                                     <img src={location} alt="location" />
                                     <span className='w-[116px] h-[15px] text-[14px] leading-[16.44px]'>Delivery Location</span>

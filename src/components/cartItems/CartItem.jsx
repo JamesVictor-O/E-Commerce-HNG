@@ -53,16 +53,18 @@ const CartItem = () => {
                         </div>
                         <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[80px]">
                             <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                            <img src={card} alt="item image"/>
-                            <span>Black</span>
+                                <img src={card} alt="item image"/>
+                                <span>Black</span>
                             </div>
+
                             <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                            <img src={card} alt="item image"/>
-                            <span>Black</span>
+                                <img src={card} alt="item image"/>
+                                <span>Black</span>
                             </div>
+
                             <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                            <img src={card} alt="item image"/>
-                            <span>Black</span>
+                                <img src={card} alt="item image"/>
+                                <span>Black</span>
                             </div>
                             
                         </div>
@@ -73,7 +75,7 @@ const CartItem = () => {
                     <div className="w-[397px] h-[353px] gap-[18px] pl-6">
                         <div className="h-[100px] w-[352px] md:h-[191px] gap-[16px]">
                            <h6 className="hidden md:block">Product</h6>
-                            <div className="hidden w-[285.72px] h-[48px] bg-[#BAC0C0] rounded-[4px] border-[1px] px-[8px] py-[12px] md:flex flex-row items-center justify-evenly">
+                            <div className="hidden w-[285.72px] h-[48px] bg-[#BAC0C0] rounded-[4px] border-[3px]  px-[8px] py-[12px] md:flex flex-row items-center justify-evenly">
                                <img src={group} alt="image"/>
                                <span className="font-medium text-[24px] leading-[28.8px] font-Montserrat">Delivery fee</span>
                                <span className="w-[63.72px] h-[27.91px] rounded-[4.95px] border-[0.25px] px-[4.95px] py-[1.86px] bg-[#001414] text-center text-white border-[#948F8C]">$2</span>
@@ -87,16 +89,16 @@ const CartItem = () => {
                                     <div className="bg-black w-[20px] h-[20px] md:w-[30px] md:h-[30px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[30px] md:h-[30px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[30px] md:h-[30px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[30px] md:h-[30px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
-                                    <div className="bg-black  w-[20px] h-[20px] md:w-[40px] md:h-[40px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
+                                    <div className="bg-black  w-[20px] h-[20px] md:w-[30px] md:h-[30px] rounded-[3.89px] md:rounded-[8.89px] flex items-center justify-center">
                                      <img src={Star} alt="rating"/>
                                     </div>
                                 
@@ -114,7 +116,7 @@ const CartItem = () => {
                              <div className="w-[219.35px] h-[54.29px] md:w-[645.7px] md:h-[53px] gap-[16px]">
                                   <div className="w-[185px] h-[45px] gap-[12px]">
                                       <span className="w-[42px] h-[27px] font-semibold text-[20px] leading-[27.2px]">Price :</span>
-                                      <span className="w-[126px] h-[45px] rounded-[4px] border-[0.5px] py-[8px] px-[12px]">₦{price}</span>
+                                      <span className="w-[126px] h-[45px] rounded-[4px] border-[0.5px] py-[8px] px-[12px]">₦{current_price}</span>
                                   </div>
                              </div>
                                 
