@@ -19,6 +19,7 @@ const Card = ({product}) => {
        <div className='w-[156px] h-[150px] md:w-[250px] md:h-[339px]'>
          <img src={imageUrl}
           alt='itemImage'
+          className='object-cover w-full h-full'
           onError={(e) => { 
             e.target.onerror = null; 
             e.target.src = 'https://via.placeholder.com/150'; // Fallback image
@@ -27,7 +28,7 @@ const Card = ({product}) => {
        </div>
        <div className='flex justify-between items-center w-[156px] h-[36px] md:w-[250px] md:h-[330px]'>
           <span className='font-normal text-[16px] leading-[19.2px]'>{name}</span>
-          <span className='font-bold text-[14px] leading-[17.07px]'>{price}</span>
+          <span className='font-bold text-[14px] leading-[17.07px]'>${price}</span>
        </div>
     </div>
   )
