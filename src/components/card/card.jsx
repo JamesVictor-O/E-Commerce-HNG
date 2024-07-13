@@ -15,11 +15,11 @@ const Card = ({product}) => {
     }
     
   return (
-    <div className='w-[156px] h-[236px] flex flex-col justify-between items-center md:w-[312px] md:h-[426px] ' onClick={handleNavigation}>
+    <div className='w-[156px] bg-white h-[236px] flex flex-col justify-between items-center md:w-[312px] md:h-[426px] rounded-[10px]' onClick={handleNavigation}>
        <div className='w-[156px] h-[150px] md:w-[250px] md:h-[339px]'>
          <img src={imageUrl}
           alt='itemImage'
-          className='object-cover w-full h-full'
+          className='object-full w-full h-full mt-6'
           onError={(e) => { 
             e.target.onerror = null; 
             e.target.src = 'https://via.placeholder.com/150'; // Fallback image

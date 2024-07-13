@@ -5,7 +5,8 @@ const MyStateProvider = ({children}) => {
     const [cartItems,setCartItems]=useState([])
      const [popUp, setPopUp]=useState(false)
      const [products, setProducts]=useState([])
-     const [error, setError]=useState()
+     const [productTotal, setProductTotal]=useState()
+     const [delivery,setDelivery]=useState(1000)
 
 
     useEffect(() => {
@@ -24,7 +25,10 @@ const MyStateProvider = ({children}) => {
         setPopUp,
         popUp,
         products,
-        setProducts
+        setProducts,
+        productTotal,
+        setProductTotal,
+        delivery
     }
   return (
     <myStates.Provider value={value}>{children}</myStates.Provider>

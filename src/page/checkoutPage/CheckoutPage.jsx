@@ -8,16 +8,18 @@ import  warning from "../../assets/warning.svg"
 import PaymentGateWay from '../paymentPage/PaymentGateWay'
 import { useContext } from 'react'
 import { myStates } from '../../components/contextAPI/MyStateProvider'
+import { CalculateTotal } from '../../components/utilityFunctions/utility'
 const CheckoutPage = () => {
-    const {cartItems,setPopUp,popUp,products}=useContext(myStates)
+    const {cartItems,setPopUp,popUp,products,productTotal,setProductTotal,delivery}=useContext(myStates)
     const handlePopUp=()=>{
         setPopUp(true)
      }
+    setProductTotal(CalculateTotal(cartItems))
 
   return (
     <div className=''> 
         {cartItems.length === 0 ? (
-            <div className="md:w-[1317.61px]   mt-[20px] items-center h-full w-[328px] flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
+            <div className="md:w-[1317.61px] mt-[20px] items-center h-full w-[328px] flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
                <h2>Your cart is empty</h2>
             </div>
         ):(
@@ -36,15 +38,15 @@ const CheckoutPage = () => {
                         <span className='w-[150px] h-[37px] rounded-[20px] border-[#ffdac7] text-[12px] border-[1px] text-black py-[10px] px-[24px]'>Delivery & Payment</span>
                    </div>
 
-                   <div className='flex flex-col md:flex-ow md:mt-[40px] items-center '>
+                   <div className='flex flex-col md:flex-row md:mt-[40px] items-center '>
                         <div  className=' w-[347.45]  mt-[40px] md:w-[873.88px] md:h-[874px] '>
-                                {products.map(product=>(
+                                {cartItems.map(product=>(
                                     <Items key={product.id} product={product}/>
                                 ))}
                         </div>
 
 
-                        <div className=' md:absolute md:top-40 md:right-5'>
+                        <div className=' md:absolute md:top-40 md:right-20'>
                             <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
                                 <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                                     <img src={location} alt="location" />
@@ -69,20 +71,20 @@ const CheckoutPage = () => {
                                 <div className='w-[325.21px] h-[115px] px-0 py-[6px]'>
                                     <div className='w-[325.21px] flex flex-row justify-between items-center mb-4'>
                                         <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>SubTotal</span>
-                                        <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦4,000</span>
+                                        <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦{productTotal}</span>
                                     </div>
                                     <div className='w-[325.21px] flex flex-row justify-between items-center mb-4'>
                                         <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>Zip(s)</span>
-                                        <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦1,000</span>
+                                        <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦0,00</span>
                                     </div>
                                     <div className='w-[325.21px] flex flex-row justify-between items-center mb-4'>
                                         <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>Delivery</span>
-                                        <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦4,000</span>
+                                        <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦{delivery}</span>
                                     </div>
                                 </div>
                                 <div className='w-[325.21px] flex flex-row justify-between items-center mb-2 border-t-4 border-b-4 pt-[5px] pb-[5px]'>
                                     <span className='w-[60px] h-[17px] font-normal text-[14px] leading-[17.07px]'>Total</span>
-                                    <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>₦4,000</span>
+                                    <span className='w-[63.21px] h-[18px] font-bold text-[14.2px]'>{productTotal + delivery}</span>
                                 </div>
 
                                 <div className='hidden md:flex w-[327px] h-[57.89px] rounded-[8px] border-[0.49px] pl-[4px]'>
