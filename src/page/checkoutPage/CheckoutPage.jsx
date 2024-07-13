@@ -9,11 +9,11 @@ import PaymentGateWay from '../paymentPage/PaymentGateWay'
 import { useContext } from 'react'
 import { myStates } from '../../components/contextAPI/MyStateProvider'
 const CheckoutPage = () => {
-    const {cartItems,setPopUp,popUp}=useContext(myStates)
+    const {cartItems,setPopUp,popUp,products}=useContext(myStates)
     const handlePopUp=()=>{
         setPopUp(true)
-        console.log(popUp)
      }
+
   return (
     <div className=''> 
         {cartItems.length === 0 ? (
@@ -22,7 +22,7 @@ const CheckoutPage = () => {
             </div>
         ):(
           <>
-            <div className='relative md:w-[1329px] w-[328px] h-[798px] mt-[40px]  md:h-[998px]'>
+            <div className='relative md:w-[1329px] w-[328px] h-[798px] mt-[40px]  md:h-full overflow-x-auto no-scrollbar'>
                     <h2 className='md:hidden w-[73px] h-[19px] md:mt-[22px] ml-[18px] text-[16px] font-semibold leading-[19.2px]' >Checkout</h2>
 
                     <div className='hidden md:flex w-[500px] h-[78px] flex-col'>
@@ -36,16 +36,16 @@ const CheckoutPage = () => {
                         <span className='w-[150px] h-[37px] rounded-[20px] border-[#ffdac7] text-[12px] border-[1px] text-black py-[10px] px-[24px]'>Delivery & Payment</span>
                    </div>
 
-                   <div className='flex flex-col md:flex-row md:mt-[40px] items-center'>
+                   <div className='flex flex-col md:flex-ow md:mt-[40px] items-center '>
                         <div  className=' w-[347.45]  mt-[40px] md:w-[873.88px] md:h-[874px] '>
-                                {cartItems.map(item=>(
-                                    <Items key={item.id} item={item}/>
+                                {products.map(product=>(
+                                    <Items key={product.id} product={product}/>
                                 ))}
                         </div>
 
 
                         <div className=' md:absolute md:top-40 md:right-5'>
-                            {/* <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
+                            <div className='md:hidden w-[327px] h-[180px] border-[05px]'>
                                 <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                                     <img src={location} alt="location" />
                                     <span className='w-[116px] h-[15px] text-[14px] leading-[16.44px]'>Delivery Location</span>
@@ -62,7 +62,7 @@ const CheckoutPage = () => {
                                     </div>
                                     <span className='text-white'>Edit</span>
                                 </button>
-                            </div> */}
+                            </div>
 
                             <div className='w-[327.21px] h-[149px] mt-[36px]  border-t-[2px] border-r-0 border-l-0 border-b-0 md:border-t-0 '>
                                 <h2 className='w-[180px] h-[29px] font-bold text-[24px] leading-[28.8px] mb-4'>Order Summary</h2>
@@ -100,7 +100,7 @@ const CheckoutPage = () => {
                                 </div>
                             </div>
 
-                            <button onClick={handlePopUp} className='w-[328px] hover:bg-black hover:text-white h-[56px] rounded-[24px] border-[0.74px] pt-[17px] pl-[85px] pb-[17px] pr-[85px] mt-[30px] md:mt-[120px]'>
+                            <button onClick={handlePopUp} className='w-[328px] hover:bg-black hover:text-white h-[56px] rounded-[24px] border-[0.74px] pt-[17px] pl-[85px] pb-[17px] pr-[85px] mt-[30px] md:mt-[120px] bg-white'>
                                Proceed to CheckOut
                             </button>
                         </div>

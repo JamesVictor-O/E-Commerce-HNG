@@ -7,7 +7,10 @@ import { myStates } from "../contextAPI/MyStateProvider"
 
 const CartItem = () => {
     const location=useLocation()
-    const {bagName,bagPrice,bagImage,bagId} =location.state
+    const {name,price,imageUrl,available_quantity,id} =location.state
+
+    console.log(name,price,imageUrl,available_quantity,id)
+    
     const countries = [
         "United States",
         "Canada",
@@ -24,19 +27,31 @@ const CartItem = () => {
 
      const {setCartItems,cartItems} =useContext(myStates)
 
-    
-
       const handleAddItemToCart=()=>{
-       
-        setCartItems([
-            ...cartItems,
-            {
-                bagName,
-                bagImage,
-                bagPrice,
-                bagId
-            }
-        ])
+        const product_Exist=cartItems.find(product=> product.id === id);
+
+        if(product_Exist){
+           const updatedCart= cartItems.map(cartItem =>
+                 cartItem.id === id? 
+                 {...cartItem,  available_quantity:cartItem.available_quantity + 1}
+                 : cartItem
+                )
+         setCartItems(updatedCart)
+        }else{
+            setCartItems([
+                ...cartItems,
+                {
+                    name,
+                    imageUrl,
+                    price,
+                    id,
+                    available_quantity
+                }
+            ])
+
+            alert("does not exis")
+
+        }
       }
   return (
     <div className="w-[397px] md:w-[1317px]">
@@ -46,9 +61,9 @@ const CartItem = () => {
         </div>
         <div className="w-[397px] flex h-[410] md:w-[1317px] md:h-[842.95px] mt-3">
              <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex flex-row w-[377px] ">
-                <div className="w-[387px] h-[612.46px] md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col items-center items-center ">
+                <div className="w-[387px] h-[612.46px] md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col  items-center ">
                         <div className="w-[344px] h-[360px] border-[0.5px]">
-                           <img src={bagImage} alt="item image" className=""/>
+                           <img src={imageUrl} alt="item image" className=""/>
                         </div>
                         <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[80px]">
                             <div className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
@@ -78,7 +93,7 @@ const CartItem = () => {
                                <span className="w-[63.72px] h-[27.91px] rounded-[4.95px] border-[0.25px] px-[4.95px] py-[1.86px] bg-[#001414] text-center text-white border-[#948F8C]">$2</span>
                             </div>
                             <div className="w-[124px] h-[60px] md:W-[352px] md:h-[37px] gap-[16px]">
-                                 <h2 className=" w-[124px] h-[10px] md:w-[352px] md:h-[38px] font-semibold text-[32px] leading-[38.4px]">{bagName}</h2>
+                                 <h2 className=" w-[124px] h-[10px] md:w-[352px] md:h-[38px] font-semibold text-[32px] leading-[38.4px]">{name}</h2>
                             </div>
                              {/* ratings */}
                             <div className="w-[88px] h-[16px] md:w-[275px] md:h-[43px] flex flex-row items-center">
@@ -113,7 +128,7 @@ const CartItem = () => {
                              <div className="w-[219.35px] h-[54.29px] md:w-[645.7px] md:h-[53px] gap-[16px]">
                                   <div className="w-[185px] h-[45px] gap-[12px]">
                                       <span className="w-[42px] h-[27px] font-semibold text-[20px] leading-[27.2px]">Price :</span>
-                                      <span className="w-[126px] h-[45px] rounded-[4px] border-[0.5px] py-[8px] px-[12px]">{bagPrice}</span>
+                                      <span className="w-[126px] h-[45px] rounded-[4px] border-[0.5px] py-[8px] px-[12px]">{price}</span>
                                   </div>
                              </div>
                                 

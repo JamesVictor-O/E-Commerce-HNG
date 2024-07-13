@@ -3,83 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import card1 from "../../assets/card1.jpg"
 import card2 from "../../assets/card2.jpg"
 import card3 from "../../assets/card3.jpg"
+import { useContext } from "react";
+import { myStates } from "../contextAPI/MyStateProvider";
 
 const AvailableStock = () => {
-   const bagsToDisplay=[
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card1,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card2,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      {
-        bagName:"cotten",
-        bagPrice:"$50",
-        bagImage:card3,
-        bagId: uuidv4()
-      },
-      
-   ]
+  const {products}=useContext(myStates)
    
   return (
     <div className="relative  w-[328px] ml-[10px] md:mt-10 gap-5  md:w-[1329px]">
@@ -90,8 +18,8 @@ const AvailableStock = () => {
         <div 
         className="flex flex-row flex-wrap content-start w-[328px] h-[1016px] gap-4  items-center  overflow-x-auto md:overflow-x-visible no-scrollbar  md:w-[1320px]  md:h-[1329px]"
         >
-            {bagsToDisplay.map(bags=>(
-              <Card key={bags.bagId} bag={bags}/>
+            {products.map(product=>(
+              <Card key={product.id} product={product}/>
             ))}
         </div>
     </div>
