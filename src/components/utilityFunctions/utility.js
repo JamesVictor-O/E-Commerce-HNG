@@ -3,7 +3,7 @@ export function CalculateTotal(product){
      .reduce((acc,price)=> acc + price,0)
 }
       
-export function HandleAddItemToCart(cartItems,name,imageUrl,current_price,id,available_quantity,setCartItems){
+export function HandleAddItemToCart(cartItems,name,imageUrl,current_price,id,setCartItems){
      const product_Exist=cartItems.find(product=> product.id === id);
      if(product_Exist){
           const updatedCart= cartItems.map(cartItem =>
@@ -20,7 +20,7 @@ export function HandleAddItemToCart(cartItems,name,imageUrl,current_price,id,ava
                          imageUrl,
                          price:current_price,
                          id,
-                         available_quantity
+                         available_quantity:1
                     }
                ])
           }

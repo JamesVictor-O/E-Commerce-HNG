@@ -19,7 +19,7 @@ function App() {
           )
       )
   return (
-    <div className='bg-[#FAFFFF] w-max-[1318.7px] '>
+    <div className='bg-[#FAFFFF] w-max-[1318.7px] md:min-h-full'>
       <MyStateProvider>
         <RouterProvider router={router}/>
       </MyStateProvider>
