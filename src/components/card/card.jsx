@@ -21,7 +21,7 @@ const Card = ({product,selectedproductId,setSelectedproductId}) => {
 
     const isShopitem= selectedproductId === id
   return (
-    <div className='max-w-[156px] bg-white h-[236px] flex flex-col  items-center md:max-w-[250px] md:h-[426px] rounded-[10px]' onMouseEnter={handleShopingdisplay}>
+    <div className='w-[156px] bg-white h-[236px] flex flex-col  items-center md:w-[250px] md:h-[426px] rounded-[10px]' onMouseEnter={handleShopingdisplay}>
        <div className='w-full h-[80%] '>
          <img src={imageUrl}
           alt='itemImage'
@@ -35,16 +35,16 @@ const Card = ({product,selectedproductId,setSelectedproductId}) => {
 
        {
          !isShopitem ? (
-        <div className='flex justify-between items-center w-[140px] h-[15%] md:w-[250px]  px-4 mt-9'>
-          <div>
-            <span className='font-semibold text-[16px] leading-[19.2px]'>{name}</span>
-            <p className='font-light'>Sold out 85%</p>
+        <div className='flex flex-col ml-5 md:flex-row md:justify-between md:items-center w-full h-[20%] md:w-[250px]  md:px-4  md:mt-9'>
+          <div className=''>
+            <span className='font-semibold text-[12px] md:text-[16px] md:leading-[19.2px]'>{name}</span>
+            <p className='hidden md:block font-light'>Sold out 85%</p>
           </div>
           <span className='font-bold text-[14px] leading-[17.07px]'>${price}</span>
        </div>
          ) :
            (
-            <button onClick={handleNavigation} className='mt-5 w-[100px] h-[36px] md:w-[200px] md:h-[50px] md:mt-8 pl-1 pr-1 rounded-full bg-gray-200 border border-black'>Shop Item</button>
+            <button onClick={handleNavigation} className='shop_item'>Shop Item</button>
            )  
        }
       

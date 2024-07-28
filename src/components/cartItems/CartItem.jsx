@@ -69,8 +69,8 @@ const CartItem = () => {
                                <span className="font-medium text-[24px] leading-[28.8px] font-Montserrat">Delivery fee</span>
                                <span className="w-[63.72px] h-[27.91px] rounded-[4.95px] border-[0.25px] px-[4.95px] py-[1.86px] bg-[#001414] text-center text-white border-[#948F8C]">$2</span>
                             </div>
-                            <div className="w-[124px] h-[35px] mb-2  md:mb-0 md:W-[352px] md:h-[37px] gap-[16px]">
-                                 <h2 className="w-[124px] h-[30px] md:w-[352px] md:h-[38px] font-semibold md:text-[32px] text-[18px] leading-[38.4px]">{name}</h2>
+                            <div className="w-full h-[35px] mb-2  md:mb-0 md:W-[352px] md:h-[37px] gap-[16px]">
+                                 <h2 className="w-full h-[30px]  md:h-[38px] font-semibold md:text-[32px] text-[18px] leading-[38.4px]">{name}</h2>
                             </div>
                              {/* ratings */}
                             <div className="w-[88px] h-[16px] md:w-[275px] md:h-[43px] flex flex-row items-center">

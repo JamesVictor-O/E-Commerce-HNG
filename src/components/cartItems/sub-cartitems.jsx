@@ -17,8 +17,8 @@ const SubCartItems = ({card}) => {
             displaySimilarItems(displayItemID).map(prod=>(
                 <div key={prod.id} 
                 onClick={(e => setDisplayitemId(prod.id))}
-                 className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center">
-                    <img src={prod.imageUrl} alt="item image"/>
+                 className="w-[88px] h-[88px] md:w-[105.46px] md:h-[159.46px] gap-[6px] flex flex-col items-center justify-center">
+                    <img src={prod.imageUrl} alt="item image" className='h-[80px] w-full object-cover md:h-full'/>
                     <span>{prod.name}</span>
                 </div>
             ))

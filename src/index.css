@@ -16,6 +16,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
   }
   .bg-custom-overlay {
     background-color: #030307;
@@ -23,4 +24,8 @@
   }
   .search_menu{
     @apply w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[2px] border-white px-[0px] py-[18px]  flex justify-center items-center
+  }
+
+  .shop_item{
+    @apply  mt-2 w-[100px] h-[36px] md:w-[200px] md:h-[50px] md:mt-8 md:pl-1 md:pr-1 rounded-full bg-gray-200 border border-black 
   }
