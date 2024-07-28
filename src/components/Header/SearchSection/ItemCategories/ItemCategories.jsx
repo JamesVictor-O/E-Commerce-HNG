@@ -8,10 +8,10 @@ const ItemCategories = () => {
            <span className='text-white ml-2'>All</span>
            <img src={vector} className='' alt="vector" />
         </div>
-        <div className='w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[0.5px] px-[0px] py-[18px]  flex justify-center items-center'>Corduroy</div>
-        <div className='w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[0.5px] px-[0px] py-[18px] gap-[11.25px] flex justify-center items-center'>Denim</div>
-        <div className='w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[0.5px] px-[0px] py-[18px] gap-[11.25px] flex justify-center items-center'>Adire</div>
-        <div className='w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[0.5px] px-[0px] py-[18px] gap-[11.25px] flex justify-center items-center'>Adire</div>
+        <div className='search_menu'>Corduroy</div>
+        <div className='search_menu'>Denim</div>
+        <div className='search_menu'>Adire</div>
+        <div className='search_menu'>Adire</div>
       </div>
     </div>
   )

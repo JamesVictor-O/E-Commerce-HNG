@@ -21,11 +21,11 @@ const Card = ({product,selectedproductId,setSelectedproductId}) => {
 
     const isShopitem= selectedproductId === id
   return (
-    <div className='max-w-[156px] bg-white h-[236px] flex flex-col  items-center md:max-w-[312px] md:h-[426px] rounded-[10px]' onClick={handleShopingdisplay}>
-       <div className='w-[156px] h-[170px] md:w-[250px] md:h-[339px]'>
+    <div className='max-w-[156px] bg-white h-[236px] flex flex-col  items-center md:max-w-[250px] md:h-[426px] rounded-[10px]' onMouseEnter={handleShopingdisplay}>
+       <div className='w-full h-[80%] '>
          <img src={imageUrl}
           alt='itemImage'
-          className='object-cover md:object-full w-full h-full md:mt-6'
+          className='object-cover  w-full h-[100%] md:mt-6'
           onError={(e) => { 
             e.target.onerror = null; 
             e.target.src = 'https://via.placeholder.com/150'; // Fallback image
@@ -35,8 +35,11 @@ const Card = ({product,selectedproductId,setSelectedproductId}) => {
 
        {
          !isShopitem ? (
-        <div className='flex justify-between items-center w-[140px] h-[36px] md:w-[250px] md:h-[330px] pl-1 pr-1 mt-9'>
-          <span className='font-normal text-[16px] leading-[19.2px]'>{name}</span>
+        <div className='flex justify-between items-center w-[140px] h-[15%] md:w-[250px]  px-4 mt-9'>
+          <div>
+            <span className='font-semibold text-[16px] leading-[19.2px]'>{name}</span>
+            <p className='font-light'>Sold out 85%</p>
+          </div>
           <span className='font-bold text-[14px] leading-[17.07px]'>${price}</span>
        </div>
          ) :

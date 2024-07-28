@@ -21,4 +21,6 @@
     background-color: #030307;
     /* background-color: red; */
   }
-  
+  .search_menu{
+    @apply w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[2px] border-white px-[0px] py-[18px]  flex justify-center items-center
+  }

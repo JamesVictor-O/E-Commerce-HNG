@@ -13,7 +13,7 @@ const AvailableStock = () => {
     <div className="relative mt-4  max-w-[328px] ml-[10px] md:mt-10 gap-5 md:max-w-[1329px]">
         <div className="w-[326px] h-[40px] md:w-[552px] md:h-[82px] mb-3 md:mb-0 ">
             <h2 className="font-semibold text-[20px] leading-[14.4px] tracking-[0.6px] h-[20px] w-[160px] md:w-[263px] md:h-[42px] md:font-semibold md:text-[36px] ">Available Stock</h2>
-            <h6 className="w-[326px] h-[14px] text-[18px] tracking-[-0.6px] font-medium text-[#4E5050] md:w-[522px] md:h-[28px] md:text-[24px] md:leading-[28.18px]">Discover our Leatest collecton of bags</h6>
+            <h6 className="w-[326px] h-[14px] text-[18px] tracking-[-0.6px] font-normal text-[#4E5050] md:w-[522px] md:h-[28px] md:text-[24px] md:leading-[28.18px]">Discover our Leatest collecton of bags</h6>
         </div>
         <div 
         className="flex flex-row flex-wrap content-start w-[328px]  gap-4  items-center  no-scrollbar  md:w-[1320px] "

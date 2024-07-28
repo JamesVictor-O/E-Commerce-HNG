@@ -34,7 +34,9 @@ const MenuBar = () => {
             <img src={user} alt='user Icon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
           <div onClick={handleCheckOutNavigatin} className='relative'>
-            <span className='bg-red-500 absolute text-white p-1 rounded-[50%] bottom-[10px] left-4'>{cartItems.length}</span>
+            <div className='bg-black w-[20px] h-[20px] absolute  p-1 rounded-[50%] left-4 bottom-5 flex items-center justify-center'>
+             <span className='text-white font-semibold'>{cartItems.length}</span> 
+            </div>
             <img src={cartIcon} alt='cartIcon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
        </div>
