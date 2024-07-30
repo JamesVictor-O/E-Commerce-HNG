@@ -18,6 +18,12 @@
     background-repeat: no-repeat;
     
   }
+  .bilboard-background {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+  }
   .bg-custom-overlay {
     background-color: #030307;
     /* background-color: red; */
