@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Boards from './Boards/Boards';
+import MobileBilboard from '../../MobileBilboard/MobileBilboard';
 const BillBoard = () => {
   const [selectedBoardId,setSelectedBoardId]=useState("firstBoard")
   const boardInfo = [
@@ -23,18 +24,31 @@ const BillBoard = () => {
     },
   ]
   return (
-    <div className="hidden md:max-w-[1318px] md:min-h-[660px] md:py-[20px]  md:flex flex-row gap-4">
-      {
-        boardInfo.map(board => (
+    <>
+      <div className="hidden md:max-w-[1318px] md:min-h-[660px] md:py-[20px]  md:flex flex-row gap-4">
+        {boardInfo.map((board) => (
           <Boards
             key={board.id}
             selectedBoardId={selectedBoardId}
             setSelectedBoardId={setSelectedBoardId}
             {...board}
           />
-        ))
-      }
-    </div>
+        ))}
+      </div>
+                {/* mobile bilboard */}
+      <div className='max-w-[397px] no-scrollbar overflow-x-auto pl-4 mt-5'>
+        <div className="w-[1318px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 bg-red-500">
+          {boardInfo.map((board) => (
+            <MobileBilboard
+              key={board.id}
+              selectedBoardId={selectedBoardId}
+              setSelectedBoardId={setSelectedBoardId}
+              {...board}
+            />
+          ))}
+        </div>
+      </div>
+    </>
   );
 }
 
