@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Boards from './Boards/Boards';
 import MobileBilboard from '../../MobileBilboard/MobileBilboard';
 const BillBoard = () => {
@@ -23,9 +23,21 @@ const BillBoard = () => {
       message:" totes are reliable carriage that adds to the details of your dress fashion with contradicting your fashion sense"
     },
   ]
+
+  const containerRef = useRef(null)
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (containerRef.current) {
+        containerRef.current.scrollBy({ left:400, behavior: 'smooth' })
+        }
+    }, 5000)
+    return ()=> clearInterval(interval)
+  }, [])
+  
   return (
     <>
-      <div className="hidden md:max-w-[1318px] md:min-h-[660px] md:py-[20px]  md:flex flex-row gap-4">
+      <div  className="hidden md:max-w-[1318px] md:min-h-[660px] md:py-[20px]  md:flex flex-row gap-4">
         {boardInfo.map((board) => (
           <Boards
             key={board.id}
@@ -36,8 +48,12 @@ const BillBoard = () => {
         ))}
       </div>
                 {/* mobile bilboard */}
-      <div className='max-w-[397px] no-scrollbar overflow-x-auto pl-4 mt-5'>
-        <div className="w-[1318px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 bg-red-500">
+    ass  <div ref={containerRef} className='max-w-[397px]  no-scrollbar overflow-x-auto  mt-5 md:hidden scroll-smooth'>
+        
+        <div  className=" relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
+
+         
+          
           {boardInfo.map((board) => (
             <MobileBilboard
               key={board.id}
@@ -46,6 +62,8 @@ const BillBoard = () => {
               {...board}
             />
           ))}
+           {/* <span className='bg-yellow-300 absolute top-36  p-2 rounded-full'> next </span>
+          <span clName='bg-yellow-300 left-[26%] absolute top-36 p-2 rounded-full'> next </span> */}
         </div>
       </div>
     </>
