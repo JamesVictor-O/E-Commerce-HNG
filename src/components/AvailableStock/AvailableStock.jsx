@@ -18,7 +18,7 @@ const AvailableStock = () => {
         <div 
         className="flex flex-row flex-wrap content-start w-[328px]  gap-4  items-center  no-scrollbar  md:w-[1320px] "
         >
-            {products.slice(0,20).map(product=>(
+            {products.slice(0,10).map(product=>(
               <Card 
               key={product.id} 
               product={product}

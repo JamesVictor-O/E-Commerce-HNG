@@ -48,7 +48,7 @@ const BillBoard = () => {
         ))}
       </div>
                 {/* mobile bilboard */}
-    ass  <div ref={containerRef} className='max-w-[397px]  no-scrollbar overflow-x-auto  mt-5 md:hidden scroll-smooth'>
+     <div ref={containerRef} className='max-w-[397px]  no-scrollbar overflow-x-auto  mt-5 md:hidden scroll-smooth'>
         
         <div  className=" relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
 

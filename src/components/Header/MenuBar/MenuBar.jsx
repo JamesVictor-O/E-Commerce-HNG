@@ -16,12 +16,15 @@ const MenuBar = () => {
   }
    const handleNavigationToPaymentPage=()=>{
     navigate("/")
-   }
+  }
+  const handleNagigateToShop = () => {
+    navigate('shop')
+  }
   return (
     <div className='flex justify-between items-center w-[326.55px]  h-[30px]  mt-2 md:pl-[60px] md:pr-[64px] md:pt-[20px] md:pb-[20px]  md:w-[1440px] md:h-[85px]'>
-       <div className='hidden md:flex  flex-row justify-between w-[127px] h-[24px] text-[18px] font-normal'>
-        <button onClick={handleCartNavigatin}>Home</button>
-         <span>Shop</span>
+       <div className='hidden md:flex  flex-row justify-between w-[127px] h-[30px] text-[18px] font-normal cursor-pointer'>
+        <span onClick={handleCartNavigatin} className='hover:border-b-2 border-black  pb-2'>Home</span>
+         <span onClick={handleNagigateToShop} className='hover:border-b-2 border-black  pb-2'>Shop</span>
        </div>
 
 

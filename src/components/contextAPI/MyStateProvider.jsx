@@ -7,42 +7,45 @@ const MyStateProvider = ({children}) => {
      const [displayItemID,setDisplayitemId]=useState(1)
      const [products, setProducts]=useState([])
      const [productTotal, setProductTotal]=useState()
-     const [delivery,setDelivery]=useState(4)
+     const [shopItems, setShopItems] = useState({});
+     const [delivery, setDelivery] = useState(4);
 
+     useEffect(() => {
+       // const apiKey="9b64558aae124747b4097f3966414d6a20240712143239551922"
 
-    useEffect(() => {
-      // const apiKey="9b64558aae124747b4097f3966414d6a20240712143239551922"
-      
-      // const url=`https://timbu-get-all-products.reavdev.workers.dev/?organization_id=763700ddc9a04c94a7ee32f444ad7b90&reverse_sort=false&page=1&size=10&Appid=WTFTGI54VWY5ESS&Apikey=${apiKey}`
-      const url='/shopData.json'
+       // const url=`https://timbu-get-all-products.reavdev.workers.dev/?organization_id=763700ddc9a04c94a7ee32f444ad7b90&reverse_sort=false&page=1&size=10&Appid=WTFTGI54VWY5ESS&Apikey=${apiKey}`
+       const url = "/shopData.json";
 
-          const fetchdata=async ()=>{
-            try{
-              const respons=await fetch(url);
-              const data=await respons.json();
-              const allItems = Object.values(data).flatMap(category => category.items);
-              setProducts(allItems)
-            }catch(erro){
-              console.log(erro)
-            }
-          }
+       const fetchdata = async () => {
+         try {
+           const respons = await fetch(url);
+           const data = await respons.json();
+           const allItems = Object.values(data).flatMap(
+             (category) => category.items
+           );
+           setShopItems(data);
+           setProducts(allItems);
+         } catch (erro) {
+           console.log(erro);
+         }
+       };
 
-          fetchdata()
-          
-    }, [])
-    const value={       
-        cartItems,
-        setCartItems,
-        setPopUp,
-        popUp,
-        products,
-        setProducts,
-        productTotal,
-        setProductTotal,
-        delivery,
-        displayItemID,
-        setDisplayitemId
-    }
+       fetchdata();
+     }, []);
+     const value = {
+       cartItems,
+       setCartItems,
+       setPopUp,
+       popUp,
+       products,
+       setProducts,
+       productTotal,
+       setProductTotal,
+       delivery,
+       displayItemID,
+       setDisplayitemId,
+       shopItems
+     };
   return (
     <myStates.Provider value={value}>{children}</myStates.Provider>
   )
