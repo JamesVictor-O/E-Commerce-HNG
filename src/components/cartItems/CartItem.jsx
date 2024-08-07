@@ -45,10 +45,11 @@ const CartItem = () => {
     // const imageUrl=`https://api.timbu.cloud/images/${productImage}`
   return (
     <div className="w-[397px] md:w-[1317px] flex justify-center flex-col items-center">
-        <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col">
+        <div className="md:w-[486px] md:h-[78px] md:gap-[8px] hidden md:flex flex-col items-center md:mb-10">
             <span className="font-semibold text-[40px] leading-[48px] text-[#001616] font-Raleway">Your Cart</span>
             <span className="md:font-Monserrat md:text-[18px] md:leading-[21.6px]">Review and manage the items in your shopping cart</span>
-        </div>
+          </div>
+          
         <div className="w-[397px] flex h-[410] md:w-[1317px] md:h-[842.95px] mt-3">
              <div className=" md:w-[1213.71px] md:h-[842.46px] md:flex flex-row w-[377px] ">
                 <div className="w-[387px] h-[612.46px] md:w-[444px] md:h-[692.46px] md:gap-[2px] flex flex-col  items-center ">

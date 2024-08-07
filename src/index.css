@@ -33,5 +33,5 @@
   }
 
   .shop_item{
-    @apply  mt-2 w-[100px] h-[36px] md:w-[200px] md:h-[50px] md:mt-8 md:pl-1 md:pr-1 rounded-full bg-gray-200 border border-black 
+    @apply  mt-2 w-[100px] h-[36px] md:w-[200px] md:h-[50px] md:mt-6 md:pl-1 md:pr-1 rounded-full bg-gray-200 border border-black 
   }

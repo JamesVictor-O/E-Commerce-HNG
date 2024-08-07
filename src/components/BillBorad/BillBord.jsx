@@ -37,7 +37,7 @@ const BillBoard = () => {
   
   return (
     <>
-      <div  className="hidden md:max-w-[1318px] md:min-h-[660px] md:py-[20px]  md:flex flex-row gap-4">
+      <div  className="hidden md:max-w-[1318px] md:min-h-[460px] md:py-[20px]  md:flex flex-row gap-4">
         {boardInfo.map((board) => (
           <Boards
             key={board.id}
