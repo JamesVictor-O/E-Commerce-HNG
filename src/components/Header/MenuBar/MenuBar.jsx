@@ -4,7 +4,7 @@ import cartIcon from './../../../assets/CartIcon.svg'
 import user from './../../../assets/User_03.svg'
 import { useNavigate } from 'react-router-dom'
 import { myStates } from '../../contextAPI/MyStateProvider'
-const MenuBar = () => {
+const MenuBar = ({setIsclickedOn}) => {
   const {cartItems}=useContext(myStates);
 
   const navigate=useNavigate()
@@ -14,11 +14,11 @@ const MenuBar = () => {
   const handleCheckOutNavigatin=()=>{
     navigate("checkout")
   }
-   const handleNavigationToPaymentPage=()=>{
-    navigate("/")
-  }
   const handleNagigateToShop = () => {
     navigate('shop')
+  }
+  const handleSignUpLogin = () => {
+    setIsclickedOn(prev=> !prev)
   }
   return (
     <div className='flex justify-between items-center w-[326.55px]  h-[30px]  mt-2 md:pl-[60px] md:pr-[64px] md:pt-[20px] md:pb-[20px]  md:w-[1440px] md:h-[85px]'>
@@ -33,7 +33,7 @@ const MenuBar = () => {
        </div>
 
        <div className='flex flex-row justify-between items-center w-[20%] h-[30px] md:w-[96.8px]  md:h-[36px]'>
-          <div>
+          <div onClick={handleSignUpLogin}>
             <img src={user} alt='user Icon' className='w-[24px] h-[30pz] md:w-[36px] md:h-[36px]'/>
           </div>
           <div onClick={handleCheckOutNavigatin} className='relative'>
