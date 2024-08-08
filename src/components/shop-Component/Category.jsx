@@ -9,7 +9,7 @@ export default function Category(props) {
           <main className='grid grid-cols-2 md:grid-cols-4 gap-2 '>
               {
                   items.items.map(product => (
-                      <CategoryItems key={product.id} product={ product} />
+                    <CategoryItems key={product.id} product={product} setDisplayitemId={props.setDisplayitemId } />
                   ))
               }
           </main>

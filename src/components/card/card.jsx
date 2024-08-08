@@ -2,22 +2,23 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { myStates } from '../contextAPI/MyStateProvider'
-useNavigate
 
-const Card = ({product,selectedproductId,setSelectedproductId}) => {
-    const {setDisplayitemId}=useContext(myStates)
-    const {name,price,imageUrl,id}=product  
+const Card = ({ product, selectedproductId, setSelectedproductId }) => {
 
-    
-    const navigate=useNavigate()
-    const handleNavigation=()=>{
-       navigate("cartItem")
-       setDisplayitemId(id)
-    }
 
-    const handleShopingdisplay=()=>{
-       setSelectedproductId(id)
-    }
+  const { setDisplayitemId } = useContext(myStates);
+
+  const { name, price, imageUrl, id } = product;
+
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate("cartItem");
+    setDisplayitemId(id);
+  };
+
+  const handleShopingdisplay = () => {
+    setSelectedproductId(id);
+  };
 
   const isShopitem = selectedproductId === id;
 
@@ -51,12 +52,12 @@ const Card = ({product,selectedproductId,setSelectedproductId}) => {
           </span>
         </div>
       ) : (
-          <button onClick={handleNavigation} className="shop_item">
-            Shop Item
-          </button>
+        <button onClick={handleNavigation} className="shop_item">
+          Shop Item
+        </button>
       )}
     </div>
   );
-}
+};
 
 export default Card

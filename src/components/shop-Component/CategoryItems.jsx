@@ -1,6 +1,19 @@
-import React from "react";
 
-const CategoryItems = ({ product }) => {
+import { useNavigate } from "react-router-dom"
+import { useContext } from "react";
+import { myStates } from "../contextAPI/MyStateProvider";
+import { HandleAddItemToCart } from "../utilityFunctions/utility";
+
+const CategoryItems = ({ product}) => {
+  const {setDisplayitemId, setCartItems,cartItems} = useContext(myStates)
+ 
+
+  const navigate = useNavigate();
+  const handleNavigation = () => {
+    navigate("/cartItem");
+    setDisplayitemId(product.id)
+  };
+
   return (
     <div className="h-[330px] md:w-[323px] md:h-[430px] md:ml-4 rounded border border-gray-500 mb-4">
       <div className="w-full overflow-hidden">
@@ -20,15 +33,15 @@ const CategoryItems = ({ product }) => {
           </span>
         </div>
         <div className="hidden md:flex flex-row justify-between items-center">
-          <button className="bg-black hover:bg-gray-400 hover:text-black text-white rounded-full py-2 px-6 font-thin">
+          <button onClick={handleNavigation} className="bg-black hover:bg-gray-400 hover:text-black text-white rounded-full py-2 px-6 font-thin">
             Shop Now
           </button>
-          <button className="flex text-black border hover:bg-gray-400 border-black rounded-full py-2 px-6 font-thin">
+          <button onClick={e=>HandleAddItemToCart(cartItems,product.name,product.imageUrl,product.price,product.id,setCartItems)} className="flex text-black border hover:bg-gray-400 border-black rounded-full py-2 px-6 font-thin">
             Add to Cart
           </button>
         </div>
         {/* for mobile */}
-        <button className= "md:hidden hover:bg-black bg-gray-400 text-black hover:text-white rounded-full py-[5px] px-6 ">
+        <button onClick={handleNavigation} className= "md:hidden hover:bg-black bg-gray-400 text-black hover:text-white rounded-full py-[5px] px-6 ">
             Shop Now
           </button>
       </div>
