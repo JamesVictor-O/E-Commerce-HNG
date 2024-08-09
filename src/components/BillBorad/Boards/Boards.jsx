@@ -1,8 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
  
-  const Boards = ({ selectedBoardId,setSelectedBoardId,id,header, message,imageUrl}) => {
+const Boards = ({ selectedBoardId, setSelectedBoardId, id, header, message, imageUrl }) => {
+    const navigate=useNavigate()
   const handleOnMouseIn = () => {
     setSelectedBoardId(id)
+    }
+
+    const handleOnClick = () => {
+      navigate("shop")
     }
     const isHoverdOn = selectedBoardId === id;
     return (
@@ -18,7 +24,7 @@ import React from "react";
           <p className="text-[20px] font-normal leading-[28.8px] mb-5 font-thin">
            { message}
           </p>
-          <button  className="max-w-[181.38px] h-[69.59px] rounded-[50px] bg-white hover:bg-gray-400 hover:text-white text-black py-[20.7px] px-[41.69px]">
+          <button onClick={handleOnClick} className="max-w-[181.38px] h-[69.59px] rounded-[50px] bg-white hover:bg-gray-400 hover:text-white text-black py-[20.7px] px-[41.69px]">
             Shop Now
           </button>
         </div>

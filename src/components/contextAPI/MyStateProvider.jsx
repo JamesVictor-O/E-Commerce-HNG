@@ -4,7 +4,7 @@ import { createContext,useState,useEffect } from "react"
 const MyStateProvider = ({children}) => {
     const [cartItems,setCartItems]=useState([])
      const [popUp, setPopUp]=useState(false)
-     const [displayItemID,setDisplayitemId]=useState(1)
+     const [displayItemID,setDisplayitemId]=useState(0)
      const [products, setProducts]=useState([])
      const [productTotal, setProductTotal]=useState()
      const [shopItems, setShopItems] = useState({});
