@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { UIcontext } from "../../../components/contextAPI/UIContext/UiProvider";
+import { auth } from "../../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(loginDetails)
-  }
-
+  const {currentUser}=useContext(UIcontext)
+  const navigate=useNavigate()
   const [loginDetails, setLoginDetails] = useState({
     email: "",
     password:""
@@ -18,6 +19,21 @@ const LoginPage = () => {
       [name]:value
     })
     
+  }
+
+  // handling login with firebase
+  const handleSubmit = async (e) => {
+  
+    e.preventDefault()
+    try {
+     const userInfo= await signInWithEmailAndPassword(auth, loginDetails.email, loginDetails.password)
+      const user = userInfo.user;
+
+      setLoginDetails({})
+      navigate('/')
+    } catch (err) {
+      alert(err)
+    }
   }
   return (
     <div className="h-screen md:h-96 flex flex-col pt-12 md:mt-0 md:justify-center w-full align-middle items-center ">

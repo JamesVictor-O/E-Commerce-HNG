@@ -3,9 +3,9 @@ import navBar from './../../../assets/nav.svg'
 import cartIcon from './../../../assets/CartIcon.svg'
 import user from './../../../assets/User_03.svg'
 import { useNavigate } from 'react-router-dom'
-import { myStates } from '../../contextAPI/MyStateProvider'
+import { CartContext } from '../../contextAPI/CartContext/CartContext'
 const MenuBar = ({setIsclickedOn}) => {
-  const {cartItems}=useContext(myStates);
+  const {cartItems}=useContext(CartContext);
 
   const navigate=useNavigate()
   const handleCartNavigatin=()=>{

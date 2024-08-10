@@ -4,10 +4,10 @@ import card1 from "../../assets/card1.jpg"
 import card2 from "../../assets/card2.jpg"
 import card3 from "../../assets/card3.jpg"
 import { useContext, useState } from "react";
-import { myStates } from "../contextAPI/MyStateProvider";
+import { ProductContext } from "../contextAPI/ProductContext/ProductContext";
 
 const AvailableStock = () => {
-  const {products}=useContext(myStates)
+  const {products}=useContext(ProductContext)
   const [selectedproductId,setSelectedproductId]=useState(null)
   return (
     <div className="relative mt-4  max-w-[328px] ml-[10px] md:mt-10 gap-5 md:max-w-[1329px]">

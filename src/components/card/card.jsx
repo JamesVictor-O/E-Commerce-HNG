@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { myStates } from '../contextAPI/MyStateProvider'
+import { UIcontext } from '../contextAPI/UIContext/UiProvider';
 
 const Card = ({ product, selectedproductId, setSelectedproductId }) => {
 
 
-  const { setDisplayitemId } = useContext(myStates);
+  const { setDisplayitemId } = useContext(UIcontext);
 
   const { name, price, imageUrl, id } = product;
 

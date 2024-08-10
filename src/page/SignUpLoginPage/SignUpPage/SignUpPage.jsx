@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { validate } from '../../../components/utilityFunctions/utility';
+import { auth } from '../../../firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const SignUpPage = () => {
+  const navigate=useNavigate()
   const [details, setDetaile] = useState({
     displayName: "",
     email: "",
@@ -11,15 +15,23 @@ const SignUpPage = () => {
   const [error, setError] = useState({})
   
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const validateError = validate(details);
+    const validateError =  validate(details);
     if (Object.keys(validateError).length === 0) {
-      console.log(details)
+      try {
+       await createUserWithEmailAndPassword(auth, details.email, details.password)
+        navigate("login")
+      } catch(err) {
+        console.log(err)
+      }
     } else {
       console.log(error)
       setError(validateError)
     }
+   
+   
+
   }
   
   const handleOnChange = (e) => {

@@ -1,11 +1,11 @@
 
 import { useContext } from "react"
-import { myStates } from "../../components/contextAPI/MyStateProvider"
+import { ProductContext } from "../../components/contextAPI/ProductContext/ProductContext"
 import Category from "../../components/shop-Component/Category"
 
 
 const ShopPage = () => {
-    const { shopItems} = useContext(myStates)
+    const { shopItems} = useContext(ProductContext)
 
 
     // converting objects of objects to array of objects

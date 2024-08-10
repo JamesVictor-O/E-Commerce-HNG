@@ -1,9 +1,11 @@
 import React from 'react'
 import { useContext } from 'react'
-import { myStates } from '../contextAPI/MyStateProvider'
-
-const SubCartItems = ({card}) => {
-    const {products,setDisplayitemId,displayItemID}=useContext(myStates)
+import { UIcontext } from '../contextAPI/UIContext/UiProvider'
+import { ProductContext } from '../contextAPI/ProductContext/ProductContext'
+const SubCartItems = ({ card }) => {
+  
+    const {setDisplayitemId,displayItemID}=useContext(UIcontext)
+    const {products}=useContext(ProductContext)
 
     const displaySimilarItems=(displayItemID,count=3)=>{
       const targetID= Array.from({ length: count }, (_, i) => displayItemID + i + 1)

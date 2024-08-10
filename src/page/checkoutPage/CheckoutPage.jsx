@@ -6,11 +6,15 @@ import editor from "../../assets/editor.svg"
 import creditCard from "../../assets/CreditCard01.svg"
 import  warning from "../../assets/warning.svg"
 import PaymentGateWay from '../paymentPage/PaymentGateWay'
-import { useContext,useEffect } from 'react'
-import { myStates } from '../../components/contextAPI/MyStateProvider'
+import { useContext, useEffect } from 'react'
+import { UIcontext } from '../../components/contextAPI/UIContext/UiProvider'
+import { ProductContext } from '../../components/contextAPI/ProductContext/ProductContext'
+import { CartContext } from '../../components/contextAPI/CartContext/CartContext'
 import { CalculateTotal } from '../../components/utilityFunctions/utility'
 const CheckoutPage = () => {
-    const {cartItems,setPopUp,popUp,products,productTotal,setProductTotal,delivery}=useContext(myStates)
+    const {products,productTotal,setProductTotal}=useContext(ProductContext)
+    const {setPopUp,popUp,delivery}=useContext(UIcontext)
+    const {cartItems}=useContext(CartContext)
     const handlePopUp=()=>{
         setPopUp(true)
      }

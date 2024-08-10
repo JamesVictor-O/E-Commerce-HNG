@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { myStates } from "../../components/contextAPI/MyStateProvider"
+import { UIcontext } from "../../components/contextAPI/UIContext/UiProvider"
 import apple from "./assets/apple.svg"
 import mastercard from "./assets/mastercard.svg"
 import paypal from "./assets/paypal.svg"
@@ -7,7 +7,7 @@ import stripe from "./assets/stripe.svg"
 import visa from "./assets/visa.svg"
 import chips from "./assets/chips.svg"
 const PaymentGateWay = () => {
-    const {popUp,setPopUp}=useContext(myStates)
+    const {popUp,setPopUp}=useContext(UIcontext)
     if(!popUp) return null;
 
     const handlePopUpClosure=()=>{

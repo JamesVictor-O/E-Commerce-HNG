@@ -1,11 +1,13 @@
 
 import { useNavigate } from "react-router-dom"
 import { useContext } from "react";
-import { myStates } from "../contextAPI/MyStateProvider";
+import { UIcontext } from "../contextAPI/UIContext/UiProvider";
+import { CartContext } from "../contextAPI/CartContext/CartContext";
 import { HandleAddItemToCart } from "../utilityFunctions/utility";
 
 const CategoryItems = ({ product}) => {
-  const {setDisplayitemId, setCartItems,cartItems} = useContext(myStates)
+  const {setDisplayitemId,} = useContext(UIcontext)
+  const {setCartItems,cartItems} = useContext(CartContext)
  
 
   const navigate = useNavigate();

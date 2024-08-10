@@ -3,14 +3,18 @@ import group from "../../assets/Group.svg"
 import Star from "../../assets/Star.svg"
 import { useLocation } from "react-router-dom"
 import { useContext, useEffect } from "react"
-import { myStates } from "../contextAPI/MyStateProvider"
+import { UIcontext } from "../contextAPI/UIContext/UiProvider"
+import { CartContext } from "../contextAPI/CartContext/CartContext"
+import { ProductContext } from "../contextAPI/ProductContext/ProductContext"
 import { CalculateTotal,HandleAddItemToCart } from "../utilityFunctions/utility"
 import SubCartItems from "./sub-cartitems"
 import Ratings from "./ratings"
 
 const CartItem = () => {
 
-     const{products,displayItemID,setCartItems,cartItems}=useContext(myStates)
+     const{products}=useContext(ProductContext)
+     const{displayItemID}=useContext(UIcontext)
+     const{setCartItems,cartItems}=useContext(CartContext)
      const item=products.find(item => item.id === displayItemID)
     const {name,price,imageUrl,id,} = item
 
