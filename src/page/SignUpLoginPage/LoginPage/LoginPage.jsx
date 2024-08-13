@@ -1,12 +1,17 @@
 import React, { useContext, useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { UIcontext } from "../../../components/contextAPI/UIContext/UiProvider";
-import { auth } from "../../../firebase";
+import { auth, db} from "../../../firebase";
 import { useNavigate } from "react-router-dom";
+import { doc, getDoc } from "firebase/firestore";
+import { CartContext } from "../../../components/contextAPI/CartContext/CartContext";
 
 const LoginPage = () => {
-  const {currentUser}=useContext(UIcontext)
-  const navigate=useNavigate()
+  const { setCurrentUser,setIsLoggedIn } = useContext(UIcontext)
+  const { cartItems,setCartItems } = useContext(CartContext)
+  
+  const navigate = useNavigate()
+  
   const [loginDetails, setLoginDetails] = useState({
     email: "",
     password:""
@@ -28,9 +33,19 @@ const LoginPage = () => {
     try {
      const userInfo= await signInWithEmailAndPassword(auth, loginDetails.email, loginDetails.password)
       const user = userInfo.user;
+      const userRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef)
+      
+      if (userSnap.exists()) {
+        const items = userSnap.data().cartItems;
+      } else {
+        console.log("no such data")
+      }
 
       setLoginDetails({})
+      setIsLoggedIn(prev=> !prev)
       navigate('/')
+
     } catch (err) {
       alert(err)
     }

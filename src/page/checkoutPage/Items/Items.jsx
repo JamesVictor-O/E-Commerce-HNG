@@ -8,7 +8,7 @@ import card from "../../../assets/card1.jpg"
 import { useContext } from 'react'
 import { CartContext } from '../../../components/contextAPI/CartContext/CartContext'
 import { ProductContext } from '../../../components/contextAPI/ProductContext/ProductContext'
-import { CalculateTotal } from '../../../components/utilityFunctions/utility'
+import { CalculateTotal,updateItemsOnFirebase } from '../../../components/utilityFunctions/utility'
 const Items = ({product}) => {
 
     const {cartItems,setCartItems}=useContext(CartContext)
@@ -19,21 +19,21 @@ const Items = ({product}) => {
        const upDatedProduct=cartItems.map(product=>
             product.id === id ? {...product, available_quantity:product.available_quantity+1} : product
         )
-        setCartItems(upDatedProduct)
+        updateItemsOnFirebase(upDatedProduct)
         setProductTotal(CalculateTotal(upDatedProduct))
     }
     const handleItemReduction=()=>{
         const upDatedProduct=cartItems.map(product=>
             product.id === id ? {...product, available_quantity:Math.max(available_quantity-1,1)} : product
         )
-        setCartItems(upDatedProduct)
+        updateItemsOnFirebase(upDatedProduct)
         setProductTotal(CalculateTotal(upDatedProduct))
     }
     const handleRemoveItem=()=>{
         const newProductList=cartItems.filter(product=>(
             product.id !== id
         ))
-         setCartItems(newProductList)
+         updateItemsOnFirebase(newProductList)
          setProductTotal(CalculateTotal(newProductList))
     }
   return (

@@ -29,9 +29,11 @@
     /* background-color: red; */
   }
   .search_menu{
-    @apply w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] border-[2px] border-white px-[0px] py-[18px]  flex justify-center items-center
+    @apply w-[90px] h-[39px] md:w-[101px] md:h-[39px] rounded-[33.75px] cursor-pointer border-[2px] border-white px-[0px] py-[18px]  flex justify-center items-center
   }
-
+   .search_menu_all{
+    @apply bg-black flex justify-center items-center  flex-row-reverse  w-[90px] h-[39px] md:w-[109px] md:h-[39epx] rounded-[33.75px] border-[0.5px] pt-[10px]  pb-[10px] 
+   }
   .shop_item{
     @apply  mt-1 w-[100px] h-[36px] md:w-[200px] md:h-[50px] md:mt-6 md:pl-1 md:pr-1 rounded-full bg-gray-200 border border-black 
   }

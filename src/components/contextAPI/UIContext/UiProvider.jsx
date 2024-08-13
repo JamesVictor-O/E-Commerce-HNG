@@ -1,6 +1,5 @@
-import { createContext, useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../../firebase";
+import { createContext,  useState } from "react";
+
 
 export const UIcontext = createContext(null)
 
@@ -8,14 +7,10 @@ export const UIprovider = ({ children }) => {
     const [popUp, setPopUp]=useState(false)
     const [displayItemID, setDisplayitemId] = useState(0)
     const [delivery, setDelivery] = useState(4);
-    const [currentUser,setCurrentUser]=useState(null)
+    const [isLoggedIn, setIsLoggedIn]=useState(false)
 
 
-    useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, (user) => {
-           setCurrentUser(user)
-       })
-   },[])
+   
      
     const value = {
         delivery,
@@ -23,7 +18,8 @@ export const UIprovider = ({ children }) => {
         setDisplayitemId,
         setPopUp,
         popUp,
-        currentUser
+        isLoggedIn,
+        setIsLoggedIn
     }
     return (
         <UIcontext.Provider value={value}>

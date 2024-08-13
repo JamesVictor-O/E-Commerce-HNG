@@ -14,7 +14,7 @@ const SubCartItems = ({ card }) => {
 
 
   return (
-    <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[80px]">
+    <div className="w-[296px] h-[88px] md:w-[424px] md:h-[161.46px]  flex flex-row items-center justify-between  mt-[60px]">
         {
             displaySimilarItems(displayItemID).map(prod=>(
                 <div key={prod.id} 

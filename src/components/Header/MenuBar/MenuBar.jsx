@@ -4,8 +4,10 @@ import cartIcon from './../../../assets/CartIcon.svg'
 import user from './../../../assets/User_03.svg'
 import { useNavigate } from 'react-router-dom'
 import { CartContext } from '../../contextAPI/CartContext/CartContext'
+import { UIcontext } from '../../contextAPI/UIContext/UiProvider'
 const MenuBar = ({setIsclickedOn}) => {
   const {cartItems}=useContext(CartContext);
+  // const {isLoggedIn}=useContext(UIcontext);
 
   const navigate=useNavigate()
   const handleCartNavigatin=()=>{

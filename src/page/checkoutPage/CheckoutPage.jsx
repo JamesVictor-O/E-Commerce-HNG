@@ -12,15 +12,15 @@ import { ProductContext } from '../../components/contextAPI/ProductContext/Produ
 import { CartContext } from '../../components/contextAPI/CartContext/CartContext'
 import { CalculateTotal } from '../../components/utilityFunctions/utility'
 const CheckoutPage = () => {
-    const {products,productTotal,setProductTotal}=useContext(ProductContext)
+    const {products,productTotal,setProductTotal,cartItems}=useContext(CartContext)
     const {setPopUp,popUp,delivery}=useContext(UIcontext)
-    const {cartItems}=useContext(CartContext)
+
     const handlePopUp=()=>{
         setPopUp(true)
      }
     useEffect(()=>{
         setProductTotal(CalculateTotal(cartItems))
-    },[])
+    },[cartItems,setProductTotal])
   return (
     <div className=''> 
         {cartItems.length === 0 ? (

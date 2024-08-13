@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { validate } from '../../../components/utilityFunctions/utility';
-import { auth } from '../../../firebase';
+import { auth, db } from '../../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { CartContext } from '../../../components/contextAPI/CartContext/CartContext';
+import { doc, setDoc } from 'firebase/firestore';
 
 const SignUpPage = () => {
+
+  const { cartItems}=useContext(CartContext)
   const navigate=useNavigate()
   const [details, setDetaile] = useState({
     displayName: "",
@@ -20,13 +24,23 @@ const SignUpPage = () => {
     const validateError =  validate(details);
     if (Object.keys(validateError).length === 0) {
       try {
-       await createUserWithEmailAndPassword(auth, details.email, details.password)
-        navigate("login")
+        const userCredentials = await createUserWithEmailAndPassword(auth, details.email, details.password)
+        const user=userCredentials.user
+        
+        // storing data in firebase
+        await setDoc(doc(db, "users", user.uid), {
+          email: user.email,
+          displayName: details.displayName,
+          cartItems:cartItems
+        })  
+        
+        // navigate to login page after signing up
+        navigate("/login")
       } catch(err) {
-        console.log(err)
+        console.log("internal error" + err)
       }
     } else {
-      console.log(error)
+      console.log( "external error"+error)
       setError(validateError)
     }
    
