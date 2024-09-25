@@ -10,7 +10,7 @@ const Header = () => {
   const location = useLocation()
   const [isClickedOn,setIsclickedOn]=useState(false)
   return (
-    <div className='skicky top-0 z-10 flex flex-col items-center w-full sm:w-[640px] md:w-[1440px] '>
+    <div className=' flex flex-col items-center w-[100%]'>
         <MenuBar setIsclickedOn={ setIsclickedOn } />
         {location.pathname === "/" && <SearchSection/> }
       {isClickedOn && (

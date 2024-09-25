@@ -37,7 +37,7 @@ const BillBoard = () => {
   
   return (
     <>
-      <div  className="hidden md:max-w-[1318px] md:min-h-[460px] md:py-[20px]  md:flex flex-row gap-4">
+      <div  className="hidden w-full md:min-h-[460px] md:py-[20px]  md:flex flex-row gap-4 mb-10">
         {boardInfo.map((board) => (
           <Boards
             key={board.id}
@@ -48,7 +48,7 @@ const BillBoard = () => {
         ))}
       </div>
                 {/* mobile bilboard */}
-     <div ref={containerRef} className='max-w-[397px]  no-scrollbar overflow-x-auto  mt-5 md:hidden scroll-smooth'>
+     <div ref={containerRef} className='w-full no-scrollbar overflow-x-auto mb-10  mt-5 md:hidden scroll-smooth'>
         
         <div  className=" relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
 

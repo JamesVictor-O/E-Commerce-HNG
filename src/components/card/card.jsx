@@ -24,7 +24,7 @@ const Card = ({ product, selectedproductId, setSelectedproductId }) => {
 
   return (
     <div
-      className="w-[156px] bg-white h-[236px] flex flex-col  items-center md:w-[250px] md:h-[426px] rounded-[10px]"
+      className="  bg-white h-[236px] flex flex-col  items-center  md:h-[426px] rounded-[10px]"
       onMouseEnter={handleShopingdisplay}
     >
       <div className="w-full">

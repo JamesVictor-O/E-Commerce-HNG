@@ -15,7 +15,7 @@ const ShopPage = () => {
     
     return (
         <div className="flex flex-col items-start md:ml-8 m-2 mt-8">
-            <h2 className="hidden md:flex justify-center items-center align-middle w-full text-[50px] font-medium leading-5 mb-4 font-thin">Shop Page</h2>
+            <h2 className="hidden md:flex justify-center items-center align-middle w-full text-[50px] font-medium leading-5 mb-4 ">Shop Page</h2>
             {
                 mapItems.map(item => (
                     <Category key={item.id} items={item}/>
