@@ -29,7 +29,7 @@ function App() {
           )
       )
   return (
-    <div className='bg-[#FAFFFF] w-[100%] md:min-h-full'>
+    <div>
       <MyStateProvider>
         <RouterProvider router={router}/>
       </MyStateProvider>

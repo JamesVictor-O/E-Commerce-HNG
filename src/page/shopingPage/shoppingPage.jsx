@@ -5,7 +5,7 @@ import BillBord from "../../components/BillBorad/BillBord";
 
 const ShoppingPage = () => {
   return (
-    <div className="flex flex-col items-center ">
+    <div className="w-full flex flex-col items-center ">
       <Advert />
       <AvailableStock />
       <BillBord />

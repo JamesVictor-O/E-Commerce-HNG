@@ -37,7 +37,8 @@ const BillBoard = () => {
   
   return (
     <>
-      <div  className="hidden w-full md:min-h-[460px] md:py-[20px]  md:flex flex-row gap-4 mb-10">
+         {/* billboard for desktop */}
+      <div  className="hidden w-full lg:w-[90%] md:min-h-[460px] md:py-[20px]  md:flex flex-row gap-4 mb-10">
         {boardInfo.map((board) => (
           <Boards
             key={board.id}
@@ -47,13 +48,12 @@ const BillBoard = () => {
           />
         ))}
       </div>
-                {/* mobile bilboard */}
+      {/* mobile bilboard */}
+      
      <div ref={containerRef} className='w-full no-scrollbar overflow-x-auto mb-10  mt-5 md:hidden scroll-smooth'>
         
-        <div  className=" relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
-
-         
-          
+        <div  className="relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
+      
           {boardInfo.map((board) => (
             <MobileBilboard
               key={board.id}
@@ -62,8 +62,6 @@ const BillBoard = () => {
               {...board}
             />
           ))}
-           {/* <span className='bg-yellow-300 absolute top-36  p-2 rounded-full'> next </span>
-          <span clName='bg-yellow-300 left-[26%] absolute top-36 p-2 rounded-full'> next </span> */}
         </div>
       </div>
     </>
