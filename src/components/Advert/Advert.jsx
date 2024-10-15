@@ -4,8 +4,8 @@ import secondPic from "../../assets/secondAdvPic.jpg"
 import loder from "../../assets/Loader.svg"
 const Advert = () => {
   return (
-    <div className='w-full mt-4 md:mt-3'>
-       <div className='w-full max-w-[541px] h-[68px] mb-[8px]'>
+    <div className='w-full min-w-96 mt-4 md:mt-3'>
+       <div className='w-full m h-[68px] mb-[8px]'>
           <h2 className='text-xl md:text-[32px] font-semibold '>Shop your favourite totebag</h2>
           <h6 className='text-[18px] font-normal'>Select the totebage that matches your fashion</h6>
        </div>
