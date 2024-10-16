@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Boards from './Boards/Boards';
 import MobileBilboard from '../../MobileBilboard/MobileBilboard';
+import Slider from 'react-slick';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 const BillBoard = () => {
   const [selectedBoardId,setSelectedBoardId]=useState("firstBoard")
   const boardInfo = [
@@ -34,7 +37,14 @@ const BillBoard = () => {
     }, 5000)
     return ()=> clearInterval(interval)
   }, [])
-  
+    
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
   return (
     <>
          {/* billboard for desktop */}
@@ -49,8 +59,18 @@ const BillBoard = () => {
         ))}
       </div>
       {/* mobile bilboard */}
-      
-     <div ref={containerRef} className='w-full no-scrollbar overflow-x-auto mb-10  mt-5 md:hidden scroll-smooth'>
+      {boardInfo.map((board) => (
+         <Slider key={board.id} {...settings}>
+              <MobileBilboard
+              key={board.id}
+              selectedBoardId={selectedBoardId}
+              setSelectedBoardId={setSelectedBoardId}
+              {...board}
+            />
+         </Slider>
+           
+          ))}
+     {/* <div ref={containerRef} className='w-full no-scrollbar overflow-x-auto mb-10  mt-5 md:hidden scroll-smooth'>
         
         <div  className="relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
       
@@ -63,7 +83,7 @@ const BillBoard = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

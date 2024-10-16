@@ -1,8 +1,27 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of Contents
 
-Currently, two official plugins are available:
+- [About the Project](#about-the-project)
+- [Built With](#built-with)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## About The Project
+This e-commerce website was built to enhance my understanding of React, Tailwind CSS, and API consumption. Additionally, the project aims to address common user challenges when purchasing products online, providing a seamless and user-friendly shopping experience.
+
+### Built With
+List the major technologies or frameworks you used in the project. For example:
+
+- [React](https://reactjs.org/)
+- [JavaScript](https://www.javascript.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Node.js](https://nodejs.org/)
+- [Firebase](https://firebase.google.com/) (if used)
+
+## Getting Started
+
+Instructions on setting up the project locally.
+ npm install npm@latest -g
+ git clone git@github.com:JamesVictor-O/E-Commerce-HNG.git
+ cd to the repository
+ npm install
+ npm run dev
