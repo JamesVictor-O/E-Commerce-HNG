@@ -17,7 +17,7 @@ const CategoryItems = ({ product}) => {
   };
 
   return (
-    <div className="h-[330px] md:w-[323px] md:h-[430px] md:ml-4 rounded border border-gray-500 mb-4">
+    <div className="min-h-[330px] md:max-w-[323px] md:h-[430px] md:ml-4 rounded border border-gray-500 mb-4">
       <div className="w-full overflow-hidden">
         <img
           src={product.imageUrl}

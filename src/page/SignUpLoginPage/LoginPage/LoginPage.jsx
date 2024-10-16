@@ -1,13 +1,15 @@
 import React, { useContext, useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { signInWithEmailAndPassword,signOut } from "firebase/auth";
 import { UIcontext } from "../../../components/contextAPI/UIContext/UiProvider";
 import { auth, db} from "../../../firebase";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
 import { CartContext } from "../../../components/contextAPI/CartContext/CartContext";
+import { ClipLoader } from "react-spinners";
 
 const LoginPage = () => {
-  const { setCurrentUser,setIsLoggedIn } = useContext(UIcontext)
+  const { setCurrentUser, setIsLoggedIn } = useContext(UIcontext)
+  
   const { cartItems,setCartItems } = useContext(CartContext)
   
   const navigate = useNavigate()
@@ -16,7 +18,8 @@ const LoginPage = () => {
     email: "",
     password:""
   })
-
+  const [isLoading, setIsLoading] = useState(false)
+  
   const handleOnchange = (e) => {
     const {name, value} = e.target;
     setLoginDetails({
@@ -28,8 +31,8 @@ const LoginPage = () => {
 
   // handling login with firebase
   const handleSubmit = async (e) => {
-  
     e.preventDefault()
+    setIsLoading(true)
     try {
      const userInfo= await signInWithEmailAndPassword(auth, loginDetails.email, loginDetails.password)
       const user = userInfo.user;
@@ -41,15 +44,17 @@ const LoginPage = () => {
       } else {
         console.log("no such data")
       }
-
+      setIsLoading(false)
       setLoginDetails({})
       setIsLoggedIn(prev=> !prev)
       navigate('/')
 
     } catch (err) {
+      setIsLoading(false)
       alert(err)
     }
   }
+
   return (
     <div className="h-screen md:h-96 flex flex-col pt-12 md:mt-0 md:justify-center w-full align-middle items-center ">
       <div className="flex flex-col items-center mb-6">
@@ -91,7 +96,7 @@ const LoginPage = () => {
           type="submit"
           className="mt-7 bg-red-300 text-white p-2 rounded"
         >
-          Login
+         {isLoading ?  <ClipLoader color="white"/> : " Login"}
         </button>
       </form>
     </div>

@@ -11,12 +11,9 @@ const Header = () => {
   const [isClickedOn,setIsclickedOn]=useState(false)
   return (
     <div className=' flex flex-col items-center  w-full '>
-        <MenuBar setIsclickedOn={ setIsclickedOn } />
+        <MenuBar isClickedOn={isClickedOn} setIsclickedOn={ setIsclickedOn } />
         {location.pathname === "/" && <SearchSection/> }
-      {isClickedOn && (
-        currentUser ? <SignoutProfile isClickedOn={isClickedOn }  setIsclickedOn={ setIsclickedOn }/> : <SignUpLogin isClickedOn={isClickedOn }  setIsclickedOn={ setIsclickedOn }/> 
-      )
-      }
+      {isClickedOn && <SignUpLogin isClickedOn={isClickedOn }  setIsclickedOn={ setIsclickedOn }/> }
     </div>
   )
 }

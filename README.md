@@ -18,7 +18,7 @@ List the major technologies or frameworks you used in the project. For example:
 - [Firebase](https://firebase.google.com/) (if used)
 
 ## Getting Started
-
+```bash
 Instructions on setting up the project locally.
  npm install npm@latest -g
  git clone git@github.com:JamesVictor-O/E-Commerce-HNG.git

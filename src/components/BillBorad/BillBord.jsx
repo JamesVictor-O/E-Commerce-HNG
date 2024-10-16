@@ -59,7 +59,8 @@ const BillBoard = () => {
         ))}
       </div>
       {/* mobile bilboard */}
-      {boardInfo.map((board) => (
+
+      {/* {boardInfo.map((board) => (
          <Slider key={board.id} {...settings}>
               <MobileBilboard
               key={board.id}
@@ -69,7 +70,9 @@ const BillBoard = () => {
             />
          </Slider>
            
-          ))}
+      ))} */}
+      
+
      {/* <div ref={containerRef} className='w-full no-scrollbar overflow-x-auto mb-10  mt-5 md:hidden scroll-smooth'>
         
         <div  className="relative w-[1218px] md:min-h-[360px] md:py-[20px]  flex flex-row gap-4 ">
