@@ -25,7 +25,7 @@ const CartItem = () => {
     
     if (!item) {
         return (
-          <div className="text-[20px] mt-4 mb-8 font-semibold text-red-700">Item not found in product</div>
+          <div className="text-[20px] mt-4 mb-8 font-semibold text-red-700">Item not found in products</div>
       )
   }
   const { name, price, imageUrl, id } = item;
@@ -44,11 +44,6 @@ const CartItem = () => {
     updateItemsOnFirebase(updatedCartItems);
   };
 
-  // useEffect(() => {
-  //     fetch(url)
-  //     .then(reponse => reponse.json()).then(data => setSingleProduct(data))
-  // }, [id])
-
   const countries = [
     "United States",
     "Canada",
@@ -63,28 +58,14 @@ const CartItem = () => {
     // Add more countries as needed
   ];
 
-  // const productImage=singleProduct.photos?.[0]?.url;
-
-  // const {name,price,available_quantity,current_price}=singleProduct;
-
-  // const imageUrl=`https://api.timbu.cloud/images/${productImage}`
 
     
 
   return (
-    <div className="w-[100%]">
-      {/* <div className="md:w-[35%] md:h-20 md:gap-2 hidden md:flex flex-col items-center md:mb-10">
-        <span className="font-semibold text-4xl leading-[48px] text-[#001616] font-Raleway">
-          Your Cart
-        </span>
-        <span className="md:font-Monserrat md:text-[18px] md:leading-[21.6px]">
-          Review and manage the items in your shopping cart
-        </span>
-      </div> */}
-
-      <div className="w-[100%] h-[410]  mt-3">
+    <div className="w-[100%] h-full">
+      <div className="w-[100%] h-[410]   mt-3">
         <div className=" w-full md:h-[842.46px] md:flex flex-row">
-          <div className="w-full md:w-[444px] h-[100%] md:h-[75%] md:gap-[2px] flex flex-col  items-center ">
+          <div className="w-full md:w-[49%] h-[100%] md:h-[75%] md:gap-[2px] flex flex-col items-center ">
             <div className="w-full h-[360px] border-[0.5px]">
               <img
                 src={imageUrl}
@@ -97,9 +78,9 @@ const CartItem = () => {
           </div>
 
           {/* items */}
-          <div className="w-[397px] h-[402.29px] md:w-[645.71px] md:h-[647.42px] md:gap-[24px] mt-[0px] md:mt-[0px]">
-            <div className="w-[397px] h-[353px] gap-[18px] pl-6">
-              <div className="h-[70px] w-[352px] md:h-[157px] gap-[16px]">
+          <div className="w-full h-[402.29px] md:h-[647.42px] md:gap-[24px] mt-[0px] md:pl-8 md:pt-3 md:mt-[0px]">
+            <div className="w-full h-[353px] gap-[18px] px-3 mt-3 md:mt-0">
+              <div className="h-[70px] w-full md:h-[157px] gap-[16px]">
                 <h6 className="hidden md:block">Product</h6>
                 <div className="hidden w-[285.72px] h-[48px] bg-[#BAC0C0] rounded-[4px] border-[3px]  px-[8px] py-[12px] md:flex flex-row items-center justify-evenly">
                   <img src={group} alt="image" />
@@ -126,7 +107,7 @@ const CartItem = () => {
                 </div>
               </div>
 
-              <div className=" w-[219.35px] h-[54.29px] md:w-[645.71px] md:h-[114px]  px-[0px] gap-[16px] ">
+              <div className=" w-full h-[54.29px] md:w-[645.71px] md:h-[114px]  px-[0px] gap-[16px] ">
                 <div className="w-[219.35px] h-[54.29px] md:w-[645.7px] md:h-[53px] gap-[16px]">
                   <div className="w-[185px] h-[45px] gap-[12px]">
                     <span className="w-[42px] h-[27px] font-semibold text-[20px] leading-[27.2px]">
@@ -138,7 +119,7 @@ const CartItem = () => {
                   </div>
                 </div>
 
-                <div className="md:hidden w-[317px] h-[70px] flex flex-col justify-between">
+                <div className="md:hidden w-full h-[70px] flex flex-col justify-between">
                   <div className="w-[145px] h-[24px] flex flex-row justify-between">
                     <span className="w-[25px] bg-black text-white h-[25px] rounded-[6px] border-[0.25px] text-[10px] border-[#B9BFBF] pt-[5.5px] pl-[4px] pb-[5.5px] pr-[5px] text-center">
                       XL
@@ -156,7 +137,7 @@ const CartItem = () => {
                       M
                     </span>
                   </div>
-                  <div className="w-[317px] h-[33px] flex flex-row rounded-[0.5px] p-[8px] bg-[#E0E7E7] justify-evenly">
+                  <div className="w-full h-[33px] flex flex-row rounded-[0.5px] p-[8px] bg-[#E0E7E7] justify-evenly">
                     <div className="w-[41px] h-[17px] flex flex-row items-center justify-between">
                       <input type="checkbox" />
                       <label className="font-normal text-[14px] leading-[16.8px] w-[21px] h-[17px]">
@@ -179,7 +160,7 @@ const CartItem = () => {
                   </div>
                 </div>
 
-                <div className="md:hidden w-[317.72px] h-[40px] bg-white rounded-[4px] border-[1px] px-[8px] py-[12px] mt-2 flex flex-row items-center justify-evenly">
+                <div className="md:hidden w-full h-[40px] bg-white rounded-[4px] border-[1px] px-[8px] py-[12px] mt-2 flex flex-row items-center justify-evenly">
                   <img src={group} alt="image" />
                   <span className="font-medium text-[17px] leading-[28.8px] font-Montserrat">
                     Delivery is not fee
@@ -198,9 +179,9 @@ const CartItem = () => {
                 </div>
               </div>
 
-              <div className="w-[310px] h-[53px] md:w-[490.32px] md:h-[159.37px] gap-[16px] mt-[140px] md:mt-[20px] ">
+              <div className=" w-full h-[53px] md:w-[490.32px] md:h-[159.37px]  mt-[140px] md:mt-[20px] ">
                 <div className="mb-4">
-                  <select className=" w-[310px] h-[44px] md:w-[500.71px] outline-none border border-green-100 md:h-[47.05px] rounded-[7.9px] items-center pl-[23.7px] bg-[#EDE7E7]">
+                  <select className=" w-full h-[44px] md:w-[500.71px] outline-none border  border-green-100 md:h-[47.05px] rounded-[7.9px] items-center pl-[23.7px] bg-[#EDE7E7]">
                     <option className="text-[#005A59] bg-gray-500 " value="">
                       select your Location
                     </option>
@@ -212,12 +193,12 @@ const CartItem = () => {
                   </select>
                 </div>
 
-                <button className="hidden md:block w-[310px] bg-gray-400 h-[48px] md:w-[490.32px] mb-3 md:h-[61.8px] rounded-[5.98px] hover:bg-white border-[1.4px] py-[10px] md:py-[19.66px] px-[19.4px] hover:text-black  text-white font-semibold">
+                <button className="hidden md:block w-full bg-gray-400 h-[48px] md:w-[490.32px] mb-3 md:h-[61.8px] rounded-[5.98px] hover:bg-white border-[1.4px] py-[10px] md:py-[19.66px] px-[19.4px] hover:text-black  text-white font-semibold">
                   Buy Now
                 </button>
 
                 <div onClick={handleItemAdding}>
-                  <button className="w-[310px] justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold">
+                  <button className="w-full justify-center flex align-middle h-[48px] md:w-[490.32px] md:h-[61.8px] rounded-[5.98px] border-[1.4px] bg-black py-[10px] md:py-[19.66px] px-[19.4px]  text-white font-semibold">
                     Add to chart
                   </button>
                 </div>

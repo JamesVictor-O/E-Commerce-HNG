@@ -12,9 +12,8 @@ import { ClipLoader } from "react-spinners";
 
 
 const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
-  const { cartItems, currentUser } = useContext(CartContext);
-  const { isLoggedIn, setIsLoggedIn } = useContext(UIcontext);
-  const { isLoading, setIsLoading } = useState(false);
+  const { cartItems,setIsLoggedIn,isLoggedIn } = useContext(CartContext);
+  const [ isLoading, setIsLoading ] = useState(false);
   
   // const {isLoggedIn}=useContext(UIcontext);
 
@@ -74,7 +73,7 @@ const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
         {/* sign up and login  for deskstop*/}
         <div className="hidden md:flex  px-2 py-1 rounded">
           {isLoggedIn ? (
-              <button onClick={handleLogOut} className=" px-2 py-1 text-white bg-blue-400 rounded-lg hover:bg-blue-300">
+              <button onClick={handleLogOut} className=" px-2 py-1 text-white bg-red-400 rounded-lg hover:bg-blue-300">
                 {isLoading ? <ClipLoader color="white"/>: "LogOut" }
               </button>
           ) :
@@ -100,7 +99,7 @@ const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
             <span className="text-white font-semibold">{cartItems.length}</span>
           </div>
           <img
-            onClick={() => handleNavigation("cartItem")}
+            onClick={() => handleNavigation("checkout")}
             src={cartIcon}
             alt="cartIcon"
             className="w-[24px] h-[30pz] md:w-[36px] md:h-[36px]"

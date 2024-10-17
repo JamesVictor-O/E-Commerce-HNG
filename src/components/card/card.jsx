@@ -32,10 +32,6 @@ const Card = ({ product, selectedproductId, setSelectedproductId }) => {
           src={imageUrl}
           alt="itemImage"
           className="object-cover w-full h-48 md:h-80 "
-          onError={(e) => {
-            e.target.onerror = null;
-            e.target.src = "https://via.placeholder.com/150"; // Fallback image
-          }}
         />
       </div>
 

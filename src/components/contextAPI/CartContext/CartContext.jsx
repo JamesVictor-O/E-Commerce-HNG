@@ -9,16 +9,17 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [productTotal, setProductTotal] = useState();
   const [currentUser, setCurrentUser] = useState(false);
+  const [isLoggedIn, setIsLoggedIn ] = useState(false);
   const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
-      setCurrentUser(true);
       if (user) {
         const userRef = doc(db, "users", user.uid);
         const unSubscribeSnapshot = onSnapshot(userRef, doc => {
           setCartItems(doc.data().cartItems)
           setUserId(user.uid)
+          setIsLoggedIn(true);
         })
         return () => unSubscribeSnapshot() 
       } else {
@@ -33,6 +34,8 @@ export const CartProvider = ({ children }) => {
     setCartItems,
     productTotal,
     setProductTotal,
+    setIsLoggedIn,
+    isLoggedIn
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

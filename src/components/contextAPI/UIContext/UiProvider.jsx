@@ -9,8 +9,6 @@ export const UIprovider = ({ children }) => {
     const [delivery, setDelivery] = useState(4);
     const [isLoggedIn, setIsLoggedIn]=useState(false)
 
-
-   
      
     const value = {
         delivery,
