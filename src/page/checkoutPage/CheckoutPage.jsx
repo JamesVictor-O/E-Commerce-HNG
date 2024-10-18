@@ -1,4 +1,3 @@
-import React from 'react'
 import Items from './Items/Items'
 import add from "../../assets/add.svg"
 import location from "../../assets/location.svg"
@@ -8,23 +7,24 @@ import  warning from "../../assets/warning.svg"
 import PaymentGateWay from '../paymentPage/PaymentGateWay'
 import { useContext, useEffect } from 'react'
 import { UIcontext } from '../../components/contextAPI/UIContext/UiProvider'
-import { ProductContext } from '../../components/contextAPI/ProductContext/ProductContext'
 import { CartContext } from '../../components/contextAPI/CartContext/CartContext'
 import { CalculateTotal } from '../../components/utilityFunctions/utility'
 const CheckoutPage = () => {
-    const {products,productTotal,setProductTotal,cartItems}=useContext(CartContext)
-    const {setPopUp,popUp,delivery}=useContext(UIcontext)
+    const {productTotal, userId,setProductTotal,cartItems}=useContext(CartContext)
+    const {setPopUp,delivery}=useContext(UIcontext)
 
     const handlePopUp=()=>{
         setPopUp(true)
      }
     useEffect(()=>{
         setProductTotal(CalculateTotal(cartItems))
-    },[cartItems,setProductTotal])
+    }, [cartItems, setProductTotal])
+    
+ 
   return (
     <div className=''> 
         {cartItems.length === 0 ? (
-            <div className="md:w-[1317.61px] mt-[20px] items-center h-full w-[328px] flex-row justify-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
+            <div className="w-full mt-[20px]  h-screen flex-row justify-center items-center font-normal md:font-extrabold text-[35px] md:text-[50px]">
                <h2>Your cart is empty</h2>
             </div>
         ):(

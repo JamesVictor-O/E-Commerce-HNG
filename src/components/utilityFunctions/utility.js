@@ -33,6 +33,7 @@ export function HandleAddItemToCart(
 
 // validating sign up input boxs
 export const validate = (details) => {
+  
   const error = {};
   if (!details.displayName.trim()) {
     error.displayName = "please provide a display name";
@@ -61,9 +62,9 @@ export const validate = (details) => {
 
 // updating cartitems on firebase firestore
 
-export const updateItemsOnFirebase =async (updatedCartItems) => {
+export const updateItemsOnFirebase =async (updatedCartItems,userId) => {
      try {
-          const useRef = doc(db, "users", "EKkRhsoTvYZJYWlz734LezuzABf2");
+          const useRef = doc(db, "users", userId);
           await updateDoc(useRef, {
               cartItems:updatedCartItems
           })

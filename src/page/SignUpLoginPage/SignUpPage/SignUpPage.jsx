@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { validate } from '../../../components/utilityFunctions/utility';
-import { auth, db } from '../../../firebase';
+import { auth, db} from '../../../firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { CartContext } from '../../../components/contextAPI/CartContext/CartContext';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc,collection, addDoc } from 'firebase/firestore';
 
 const SignUpPage = () => {
 
@@ -34,6 +34,10 @@ const SignUpPage = () => {
           cartItems:cartItems
         })  
         
+        // creating a firestore database
+        await addDoc(collection(db,"users"), {
+          
+        })
         // navigate to login page after signing up
         navigate("/login")
       } catch(err) {

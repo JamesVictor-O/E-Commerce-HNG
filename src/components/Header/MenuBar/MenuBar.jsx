@@ -5,7 +5,6 @@ import user from "./../../../assets/User_03.svg";
 import humbugerIcon from "./../../../assets/humbuger.png";
 import { Link, useNavigate } from "react-router-dom";
 import { CartContext } from "../../contextAPI/CartContext/CartContext";
-import { UIcontext } from "../../contextAPI/UIContext/UiProvider";
 import { auth } from "../../../firebase";
 import { signOut } from "firebase/auth";
 import { ClipLoader } from "react-spinners";
@@ -14,10 +13,8 @@ import { ClipLoader } from "react-spinners";
 const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
   const { cartItems,setIsLoggedIn,isLoggedIn } = useContext(CartContext);
   const [ isLoading, setIsLoading ] = useState(false);
-  
-  // const {isLoggedIn}=useContext(UIcontext);
-
   const navigate = useNavigate();
+  
   const handleNavigation = (route) => {
     navigate(`${route}`);
   };
@@ -63,13 +60,13 @@ const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
       {/* logo */}
       <div
         onClick={() => handleNavigation("/")}
-        className=" w-full md:w-[311px]  md:h-[43px] max-w-full"
+        className=" w-[181px] h-10 md:w-[311px]  md:h-[43px] max-w-full"
       >
-        <img src={navBar} alt="Nav bar" className="w-[80%] md:w-full" />
+        <img src={navBar} alt="Nav bar" className="w-full h-full" />
       </div>
 
       {/* profile and cart logo */}
-      <div className="flex flex-row justify-between align-middle items-center w-[20%]  md:w-56  md:h-[36px] ">
+      <div className="flex flex-row justify-between align-middle mr-4 md:mr-0 items-center w-[25%] h-10 md:w-56  md:h-[36px] ">
         {/* sign up and login  for deskstop*/}
         <div className="hidden md:flex  px-2 py-1 rounded">
           {isLoggedIn ? (

@@ -25,13 +25,13 @@ const CartItem = () => {
     
     if (!item) {
         return (
-          <div className="text-[20px] mt-4 mb-8 font-semibold text-red-700">Item not found in products</div>
+          <div className="text-[20px]  mt-4 mb-8 font-semibold text-red-700">Item not found in products</div>
       )
   }
   const { name, price, imageUrl, id } = item;
 
   const apiKey = "9b64558aae124747b4097f3966414d6a20240712143239551922";
-  const url = `https://timbu-get-single-product.reavdev.workers.dev/${id}?organization_id=763700ddc9a04c94a7ee32f444ad7b90&Appid=WTFTGI54VWY5ESS&Apikey=${apiKey}`;
+  // const url = `https://timbu-get-single-product.reavdev.workers.dev/${id}?organization_id=763700ddc9a04c94a7ee32f444ad7b90&Appid=WTFTGI54VWY5ESS&Apikey=${apiKey}`;
 
   const handleItemAdding = async () => {
     const updatedCartItems = HandleAddItemToCart(
@@ -41,7 +41,7 @@ const CartItem = () => {
       price,
       id
     );
-    updateItemsOnFirebase(updatedCartItems);
+    updateItemsOnFirebase(updatedCartItems,userId);
   };
 
   const countries = [
