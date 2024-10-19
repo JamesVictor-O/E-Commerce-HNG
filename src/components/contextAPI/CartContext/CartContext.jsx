@@ -23,6 +23,7 @@ export const CartProvider = ({ children }) => {
         })
         return () => unSubscribeSnapshot() 
       } else {
+        alert("no account logged in")
         setCartItems([])
       }
     });

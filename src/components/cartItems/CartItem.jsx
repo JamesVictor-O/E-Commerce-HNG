@@ -19,7 +19,7 @@ import { db } from "../../firebase";
 const CartItem = () => {
   const { products } = useContext(ProductContext);
   const { displayItemID } = useContext(UIcontext);
-  const {  cartItems, userId } = useContext(CartContext);
+  const {  cartItems, userId,setCartItems } = useContext(CartContext);
 
     const item = products.find((item) => item.id === displayItemID);
     
@@ -41,7 +41,7 @@ const CartItem = () => {
       price,
       id
     );
-    updateItemsOnFirebase(updatedCartItems,userId);
+    userId ? updateItemsOnFirebase(updatedCartItems,userId) : setCartItems(updatedCartItems)
   };
 
   const countries = [

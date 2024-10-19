@@ -11,31 +11,28 @@ import { ProductContext } from '../../../components/contextAPI/ProductContext/Pr
 import { CalculateTotal,updateItemsOnFirebase } from '../../../components/utilityFunctions/utility'
 const Items = ({product}) => {
 
-    const {cartItems,setCartItems}=useContext(CartContext)
-    const {setProductTotal}=useContext(ProductContext)
+    const {cartItems,setCartItems,userId}=useContext(CartContext)
     const { available_quantity,id,price,imageUrl}=product
 
     const handleItemAddition=()=>{
        const upDatedProduct=cartItems.map(product=>
             product.id === id ? {...product, available_quantity:product.available_quantity+1} : product
         )
-        updateItemsOnFirebase(upDatedProduct)
-        setProductTotal(CalculateTotal(upDatedProduct))
+       userId ? updateItemsOnFirebase(upDatedProduct,userId) : setCartItems(upDatedProduct)
     }
     const handleItemReduction=()=>{
         const upDatedProduct=cartItems.map(product=>
             product.id === id ? {...product, available_quantity:Math.max(available_quantity-1,1)} : product
         )
-        updateItemsOnFirebase(upDatedProduct)
-        setProductTotal(CalculateTotal(upDatedProduct))
+       userId ? updateItemsOnFirebase(upDatedProduct,userId) : setCartItems(upDatedProduct)
     }
     const handleRemoveItem=()=>{
         const newProductList=cartItems.filter(product=>(
             product.id !== id
         ))
-         updateItemsOnFirebase(newProductList)
-         setProductTotal(CalculateTotal(newProductList))
+       userId ?  updateItemsOnFirebase(newProductList,userId) : setCartItems(newProductList)
     }
+    
   return (
     <div className=' md:w-[863.88px] md:h-[180px] w-[327.41px] mb-6 border pr-4 md:pr-1 bg-white border-gray-200 rounded-[10px] md:mr-4 h-[84.76px] pt-[8.04px] pl-[8.04] pb-[16px] flex flex-row items-center justify-between'>
             {/* image */}
