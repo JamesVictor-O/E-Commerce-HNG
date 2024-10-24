@@ -8,7 +8,6 @@ export const CartContext = createContext(null);
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [productTotal, setProductTotal] = useState();
-  // const [currentUser, setCurrentUser] = useState(false);
   const [isLoggedIn, setIsLoggedIn ] = useState(false);
   const [userId, setUserId] = useState(null);
 
@@ -23,7 +22,6 @@ export const CartProvider = ({ children }) => {
         })
         return () => unSubscribeSnapshot() 
       } else {
-        alert("no account logged in")
         setCartItems([])
       }
     });

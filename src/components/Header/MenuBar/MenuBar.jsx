@@ -40,7 +40,7 @@ const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
   }, [isClickedOn]);
 
   return (
-    <div className="w-full flex justify-between items-center border-b border-[#5a5757] pb-2 md:pb-5 md:px-5">
+    <div className="w-full flex justify-between items-center  pb-2 md:pb-5 md:px-5">
       {/* navbars */}
       <div className="hidden md:flex  flex-row justify-between w-28 h-8 text-lg font-normal cursor-pointer">
         <span
@@ -66,20 +66,33 @@ const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
       </div>
 
       {/* profile and cart logo */}
-      <div className="flex flex-row justify-between align-middle mr-4 md:mr-0 items-center w-[25%] h-10 md:w-56  md:h-[36px] ">
+      <div className="flex flex-row align-middle mr-4 justify-center  md:mr-0 items-center w-[25%] h-10 md:w-56 md:h-[36px] ">
+         {/* cart items icon */}
+         <div className="relative bg-white p-1 rounded-full">
+          <div className="bg-black w-[20px] h-[20px] absolute  p-1 rounded-[50%] right-0 top-0 flex items-center justify-center">
+            <span className="text-white font-semibold">{cartItems.length}</span>
+          </div>
+          <img
+            onClick={() => handleNavigation("checkout")}
+            src={cartIcon}
+            alt="cartIcon"
+            className="w-[24px] h-[30pz] md:w-[36px] md:h-[36px]"
+          />
+        </div>
+        
         {/* sign up and login  for deskstop*/}
-        <div className="hidden md:flex  px-2 py-1 rounded">
+        <div className="hidden md:flex  px-2  py-1 rounded">
           {isLoggedIn ? (
-              <button onClick={handleLogOut} className=" px-2 py-1 text-white bg-red-400 rounded-lg hover:bg-blue-300">
+              <button onClick={handleLogOut} className="p-2 text-black bg-red-400 rounded-lg hover:bg-blue-300 font-sans ml-4">
                 {isLoading ? <ClipLoader color="white"/>: "LogOut" }
               </button>
           ) :
           (
-            <div className="">
-              <Link to={'login'} className=" px-2 py-1 text-white bg-blue-400 rounded-lg hover:bg-blue-300">
+            <div className="ml-3">
+              <Link to={'login'} className=" p-2 font-sans text-white bg-blue-400 rounded-sm hover:bg-blue-300">
                 LogIn
               </Link>
-              <Link to={"signup"} className=" px-2 py-1 text-white bg-blue-400 rounded-lg ml-2 hover:bg-blue-300">
+              <Link to={"signup"} className=" p-2 text-white font-sans bg-blue-400 rounded-sm ml-2 hover:bg-blue-300">
                 SignUp
               </Link>
             </div>
@@ -90,31 +103,15 @@ const MenuBar = ({ setIsclickedOn, isClickedOn }) => {
           
         </div>
 
-        {/* cart items icon */}
-        <div className="relative">
-          <div className="bg-black w-[20px] h-[20px] absolute  p-1 rounded-[50%] left-4 bottom-5 flex items-center justify-center">
-            <span className="text-white font-semibold">{cartItems.length}</span>
-          </div>
-          <img
-            onClick={() => handleNavigation("checkout")}
-            src={cartIcon}
-            alt="cartIcon"
-            className="w-[24px] h-[30pz] md:w-[36px] md:h-[36px]"
-          />
-        </div>
+       
 
         {/* profile picture */}
         <div>
           <img
-            src={user}
-            alt="user Icon"
-            className="w-[24px] h-[30pz] md:w-[36px] md:h-[36px] md:flex hidden"
-          />
-          <img
             src={humbugerIcon}
             onClick={() => handleOpenClose(isClickedOn)}
             alt="user Icon"
-            className="w-[24px] h-[30pz] md:w-[36px] md:h-[36px] md:hidden flex"
+            className="w-[24px] ml-4 h-[30pz] md:w-[36px] md:h-[36px] md:hidden flex"
           />
         </div>
       </div>

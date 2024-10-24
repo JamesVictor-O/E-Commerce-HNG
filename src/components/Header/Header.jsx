@@ -10,9 +10,9 @@ const Header = () => {
   const location = useLocation()
   const [isClickedOn,setIsclickedOn]=useState(false)
   return (
-    <div className=' flex flex-col items-center  w-full '>
+    <div className='fixed flex flex-col items-center  w-full p-3 border-[#5a5757] border-b  z-50 bg-white'>
         <MenuBar isClickedOn={isClickedOn} setIsclickedOn={ setIsclickedOn } />
-        {location.pathname === "/" && <SearchSection/> }
+        
       {isClickedOn && <SignUpLogin isClickedOn={isClickedOn }  setIsclickedOn={ setIsclickedOn }/> }
     </div>
   )

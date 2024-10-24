@@ -14,7 +14,7 @@ const Boards = ({ selectedBoardId, setSelectedBoardId, id, header, message, imag
     return (
       <div
         style={{ backgroundImage: `url(${imageUrl})`}}
-        className={`relative bilboard-background  h-[420px] rounded-[20px] overflow-hidden ml-4   ${isHoverdOn ? " w-[643px]" : "w-[343px]"}`} onMouseOver={handleOnMouseIn}
+        className={`relative bilboard-background  h-[420px] rounded-[20px] overflow-hidden ml-4   ${isHoverdOn ? " w-[743px]" : "w-[543px]"}`} onMouseOver={handleOnMouseIn}
       >
       <div className="absolute inset-0 bg-custom-overlay opacity-70 text-white">
         <div className={`h-[241.5px] mt-11  flex flex-col   ${isHoverdOn ? " w-[543px] ml-7 items-start" : "w-full ml-3 items-center" }`}>

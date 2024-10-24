@@ -1,20 +1,18 @@
 import card from "../../assets/card1.jpg"
 import group from "../../assets/Group.svg"
 import Star from "../../assets/Star.svg"
-import { useLocation } from "react-router-dom"
-import { useContext, useEffect } from "react"
+import { useContext, } from "react"
 import { UIcontext } from "../contextAPI/UIContext/UiProvider"
 import { CartContext } from "../contextAPI/CartContext/CartContext"
 import { ProductContext } from "../contextAPI/ProductContext/ProductContext"
 import {
-  CalculateTotal,
   HandleAddItemToCart,
   updateItemsOnFirebase,
 } from "../utilityFunctions/utility";
 import SubCartItems from "./sub-cartitems";
 import Ratings from "./ratings";
-import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../../firebase";
+import { ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartItem = () => {
   const { products } = useContext(ProductContext);
@@ -29,11 +27,8 @@ const CartItem = () => {
       )
   }
   const { name, price, imageUrl, id } = item;
-
-  const apiKey = "9b64558aae124747b4097f3966414d6a20240712143239551922";
-  // const url = `https://timbu-get-single-product.reavdev.workers.dev/${id}?organization_id=763700ddc9a04c94a7ee32f444ad7b90&Appid=WTFTGI54VWY5ESS&Apikey=${apiKey}`;
-
   const handleItemAdding = async () => {
+    
     const updatedCartItems = HandleAddItemToCart(
       cartItems,
       name,
@@ -62,15 +57,17 @@ const CartItem = () => {
     
 
   return (
-    <div className="w-[100%] h-full">
-      <div className="w-[100%] h-[410]   mt-3">
-        <div className=" w-full md:h-[842.46px] md:flex flex-row">
+    <div className="w-full h-full mt-20  md:mt-24 px-5">
+      <div className="w-full mt-3">
+        <div className=" w-full  md:flex flex-row">
+
+          {/* class  */}
           <div className="w-full md:w-[49%] h-[100%] md:h-[75%] md:gap-[2px] flex flex-col items-center ">
-            <div className="w-full h-[360px] border-[0.5px]">
+            <div className="w-full h-[360px] border-[0.5px] rounded">
               <img
                 src={imageUrl}
                 alt="item image"
-                className="object-cover w-full h-full"
+                className="object-cover w-full h-full rounded"
               />
             </div>
             {/* subcartItems */}
@@ -207,6 +204,8 @@ const CartItem = () => {
           </div>
         </div>
       </div>
+      {/* react tostify for poping up notification */}
+      <ToastContainer autoClose={1000}/>
     </div>
   );
 };

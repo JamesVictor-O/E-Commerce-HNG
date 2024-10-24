@@ -11,8 +11,8 @@ const AvailableStock = () => {
   const [selectedproductId,setSelectedproductId]=useState(null)
   return (
     <div className="w-full mt-4">
-        <div className="w-full h-[40px] md:w-[552px] md:h-[82px] mb-3 md:mb-0">
-            <h2 className="font-semibold text-[20px] leading-[14.4px] tracking-[0.6px] h-[20px] w-[160px] md:w-[263px] md:h-[42px] md:font-semibold md:text-[36px] ">Available Stock</h2>
+        <div className="w-full h-[40px] md:h-24 mb-3 md:mb-4 md:py-3">
+            <h2 className="font-semibold text-[20px] leading-[14.4px] tracking-[0.6px] h-[20px]  md:h-[42px] md:font-semibold md:text-[36px] ">Available Stock</h2>
             <h6 className="w-[326px] h-[14px] text-[18px] tracking-[-0.6px] text-[#4E5050] md:w-[522px] md:h-[28px] md:text-[24px] md:leading-[28.18px] font-thin">Discover our Leatest collecton of bags</h6>
         </div>
         <div 

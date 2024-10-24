@@ -34,7 +34,7 @@ const Items = ({product}) => {
     }
     
   return (
-    <div className=' md:w-[863.88px] md:h-[180px] w-[327.41px] mb-6 border pr-4 md:pr-1 bg-white border-gray-200 rounded-[10px] md:mr-4 h-[84.76px] pt-[8.04px] pl-[8.04] pb-[16px] flex flex-row items-center justify-between'>
+    <div className='md:h-[180px] w-[95%] lg:w-[90%] mb-6 border pr-4 md:pr-1 bg-slate-50 border-gray-200 rounded-[10px] md:mr-4 h-[84.76px] pt-[8.04px] pl-[8.04] pb-[16px] flex flex-row items-center justify-between md:justify-normal '>
             {/* image */}
             <div className='w-[60.32px] h-[60.32px] ml-2 flex flex-row md:w-[332.02px] md:h-[140px] md:ml-3'>
                 <img src={imageUrl} 
@@ -51,7 +51,7 @@ const Items = ({product}) => {
             
 
             {/* amount */}
-        <div className='md:w-[421.85px] md:h-[48px] w-[89.75px] h-[60px] flex flex-col justify-between items-end md:flex-row-reverse md:items-center '>
+        <div className='md:min-w-[421.85px]  md:h-[48px] w-[89.75px] h-[60px] flex flex-col justify-between items-end md:flex-row-reverse md:items-center '>
             <img src={trash} alt="trash" onClick={handleRemoveItem} className='bg-black w-[21.13px] mr-8 hidden md:block p-[4px]'/>
             <span className='w-[46.21px] h-[18px] text-[11.21px] leading-[17.93px]  font-bold'>₦{product.price * product.available_quantity}</span>
             <div className='w-[89.17px] h-[24.13px] flex flex-row justify-between'>

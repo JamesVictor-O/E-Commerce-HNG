@@ -5,9 +5,9 @@ import loder from "../../assets/Loader.svg"
 const Advert = () => {
   return (
     <div className='w-full mt-4 md:mt-3'>
-       <div className='w-full m h-[68px] mb-[8px]'>
-          <h2 className='text-xl md:text-[32px] font-semibold '>Shop your favourite totebag</h2>
-          <h6 className='text-[18px] font-normal'>Select the totebage that matches your fashion</h6>
+       <div className='w-full m h-28 mb-[8px]  flex flex-col justify-between' >
+          <h2 className='text-xl md:text-5xl font-semibold '>Shop your favourite totebag</h2>
+          <h6 className='text-xl font-normal'>Select the totebage that matches your fashion</h6>
        </div>
        <div className='relative w-full h-[454.55px] rounded-[37.19px] border-[0.52px]  mt-7 custom-background bg-custom-overlay '>    
          <div className="absolute inset-0 bg-custom-overlay opacity-75">

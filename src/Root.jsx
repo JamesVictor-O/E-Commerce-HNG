@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer'
 import { Outlet } from 'react-router-dom'
 const RootPage = () => {
   return (
-    <div className=' bg-[#E0E7E7] w-full   flex flex-col  items-center  p-4'>
+    <div className=' bg-[#E0E7E7] w-full   flex flex-col  items-center '>
            <Header/>
            <Outlet/>
            <Footer/>

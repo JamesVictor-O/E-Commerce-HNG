@@ -1,5 +1,6 @@
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import { toast } from "react-toastify";
 
 export function CalculateTotal(product) {
   return product
@@ -14,6 +15,7 @@ export function HandleAddItemToCart(
   current_price,
   id,
 ) {
+  toast.success('item added')
   const product_Exist = cartItems.find((product) => product.id === id);
   if (product_Exist) {
     const updatedCart = cartItems.map((cartItem) =>
@@ -26,9 +28,7 @@ export function HandleAddItemToCart(
      const newItem = { name, imageUrl, price: current_price, id, available_quantity: 1 };
      const updatedCart=[...cartItems,newItem]
      return updatedCart;
-  }
-
-     
+  }  
 }
 
 // validating sign up input boxs
