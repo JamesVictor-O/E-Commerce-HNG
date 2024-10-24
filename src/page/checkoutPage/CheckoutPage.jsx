@@ -54,7 +54,7 @@ const CheckoutPage = () => {
                         </div>
 
 
-                        <div className=' w-[90%] bg-red-300 md:top-8 md:mr-10'>
+                        <div className=' w-[90%]  md:top-8 md:mr-10'>
                             <div className='md:hidden w-full h-[180px] border-[4px]  border-white '>
                                 <div className='w-[140px] h-[20px] ml-[16px] mt-[17px] flex flex-row'>
                                     <img src={location} alt="location" />
